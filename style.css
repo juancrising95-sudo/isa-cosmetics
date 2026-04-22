@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --verde-profundo: #4a5d23;  
+    --verde-oliva: #adc15d;
+    --crema: #efeddf;
+    --fucsia-claro: #ff5c8d;    
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: var(--crema);
+}
+
+/* --- SECCIÓN 1: AJUSTE DE CABECERA --- */
+
+.header-principal {
+    background-color: #4a5d23; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.contenedor-banner {
+    width: 100%;       
+    max-width: 450px;  
+    margin: 0 auto;
+    padding: 0;
+    line-height: 0;
+    display: block;
+}
+
+.main-logo {
+    width: 100%; 
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+.location {
+    display: none;       
+}
+
+/* --- SECCIÓN 2: CONTENIDO INFERIOR --- */
+
+.brand-content-oliva {
+    background-color: #adc15d; 
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0;
+}
+
+.brand-content-oliva .contenedor-banner {
+    width: 100%;
+    max-width: 450px; 
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* --- AJUSTE DINÁMICO PARA LAPTOP --- */
+
+@media (min-width: 768px) {
+    .contenedor-banner, 
+    .brand-content-oliva .contenedor-banner,
+    .footer-premium .contenedor-banner {
+        max-width: 800px; /* Tamaño unificado para laptop */
+        transition: max-width 0.3s ease;
+    }
+
+    .main-logo {
+        box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    }
+}
+
+/* --- SECCIÓN FINAL: FOOTER Y BOTONES --- */
+
+.footer-premium {
+    background-color: var(--crema); 
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    line-height: 0;
+}
+
+.contenedor-botones {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 800px; /* IMPORTANTE: Coincide con el resto del catálogo */
+    margin: 0 auto;
+}
+
+/* Estilo de los botones */
+.btn-minimalista {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    border-radius: 20px; 
+    background-color: rgba(239, 237, 223, 0.95); 
+    border: 1px solid rgba(212, 175, 55, 0.5); 
+    color: #4a5d23;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem; 
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.btn-minimalista:hover {
+    background-color: #efeddf;
+    border-color: rgba(212, 175, 55, 1);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* POSICIONAMIENTO SUPERIOR EXACTO */
+.btn-whatsapp {
+    top: 27%; /* Ajustado para quedar sobre el icono dorado */
+    left: 16.5%; 
+    transform: translateX(-50%);
+}
+
+.btn-ubicacion {
+    top: 27%; /* Ajustado para quedar sobre el icono dorado */
+    right: 16.5%; 
+    transform: translateX(50%);
+}
+
+/* Asegura que el área del mapa de imagen también muestre la mano al pasar el mouse */
+area {
+    cursor: pointer;
+    outline: none;
+}
