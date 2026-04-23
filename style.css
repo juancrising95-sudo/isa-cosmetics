@@ -71,48 +71,64 @@ body {
 /* --- AJUSTE DINÁMICO PARA LAPTOP --- */
 
 /* --- SOLO PARA CELULARES: ENFOQUE DE SECCIONES --- */
-@media (max-width: 767px) {
-    html, body {
-        scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-    }
 
-    .header-principal, 
-    .brand-content-oliva, 
-    .footer-vertical {
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-        /* No usamos height: 100vh para no estirar, 
-           usamos min-height para que respete el tamaño natural */
-        min-height: 80vh; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.contenedor-infografia {
+    position: relative;
+    width: 100%;
+    max-width: 450px; /* Tamaño igual a tus categorías superiores */
+    margin: 0 auto;
+    line-height: 0;
+}
+
+/* Esta regla hará que en celular se estire al 100% como los de arriba */
+@media (max-width: 767px) {
+    .contenedor-infografia {
+        max-width: 100% !important;
+    }
+}
+
+/* --- PROTECCIÓN PARA LAPTOP (Para que no se vea gigante en PC) --- */
+@media (min-width: 1024px) {
+    .contenedor-infografia {
+        max-width: 450px; /* Misma medida que tus banners de arriba */
     }
 }
 
     .main-logo {
         box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
     }
-}
+
 
 /* --- SECCIÓN FINAL: INFOGRAFÍA VERTICAL --- */
 
+/* REEMPLAZO FINAL LIMPIO */
 .footer-vertical {
-    background-color: #efeddf; /* Mismo color crema de fondo */
-    padding: 20px 0; /* Un poco de aire arriba y abajo */
-    margin: 0;
+    background-color: var(--crema);
     width: 100%;
     display: flex;
-    justify-content: center; /* Centra el contenedor en laptops */
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 .contenedor-infografia {
-    position: relative; /* Clave para posicionar los botones absolutos */
+    position: relative;
     width: 100%;
-    max-width: 480px; /* Límite para que no se deforme en pantallas grandes */
-    margin: 0 auto;
-    line-height: 0; /* Elimina espacios fantasma bajo la imagen */
+    max-width: 450px; /* Tamaño laptop */
+    line-height: 0;
+}
+
+.contenedor-infografia .imagen-fondo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* LA REGLA MÁGICA PARA EL CELULAR */
+@media (max-width: 767px) {
+    .contenedor-infografia {
+        max-width: 100% !important; /* Aquí es donde se hace grande como los otros */
+    }
 }
 
 .contenedor-infografia .imagen-fondo {
@@ -136,8 +152,8 @@ body {
     outline: none !important;
     
     /* TAMAÑO DE LA ZONA DE CLIC */
-    width: 180px; 
-    height: 50px;
+    width: 450px; 
+    height: 150px;
     
     display: block;
     cursor: pointer;
@@ -155,35 +171,22 @@ body {
 
 /* --- POSICIONAMIENTO EXACTO SOBRE EL DIBUJO --- */
 
-/* Ajuste para el botón CONTACTAR (el verde de arriba) */
+/* Ajuste para el botón invisible de CONTACTAR */
 .btn-wa-v2 {
-    top: 11.5%; 
+    top: 18%; /* Valor ajustado para imagen grande */
     left: 50%;
 }
 
-/* Ajuste para el botón VISÍTANOS (el bordó de abajo) */
+/* Ajuste para el botón invisible de VISÍTANOS */
 .btn-maps-v2 {
-    top: 61.2%; 
+    top: 57%; /* Valor ajustado para imagen grande */
     left: 50%;
 }
 
 /* --- ENFOQUE DE SECCIONES (SIN CAMBIAR TAMAÑOS) --- */
 
-/* 1. Activamos el imán en el contenedor principal */
-html, body {
-    scroll-snap-type: y proximity; /* 'proximity' es más suave que 'mandatory', no fuerza el tamaño */
-    scroll-behavior: smooth;
-}
 
-/* 2. Marcamos dónde debe frenar el imán en cada sección */
-.header-principal, 
-.brand-content-oliva, 
-.footer-vertical {
-    scroll-snap-align: start; /* El imán se pega al inicio de la imagen */
-    scroll-snap-stop: normal;
-}
-
-/* 3. PROTECCIÓN PARA LAPTOP: 
+/* --- PROTECCIÓN PARA LAPTOP: 
       Aquí desactivamos el imán para que en computadoras el scroll sea libre y grande */
 @media (min-width: 1024px) {
     html, body {
@@ -217,5 +220,28 @@ html, body {
 .btn-ver-mas:active {
     background-color: #adc15d; /* Cambio de color al tocar */
     transform: scale(0.95);
+}
+
+.pantalla-productos {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--crema);
+}
+
+.btn-regresar {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--verde-profundo);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
 }
  
