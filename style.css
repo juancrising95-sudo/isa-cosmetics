@@ -83,69 +83,73 @@ body {
     }
 }
 
-/* --- SECCIÓN FINAL: FOOTER Y BOTONES --- */
+/* --- SECCIÓN FINAL: INFOGRAFÍA VERTICAL --- */
 
-.footer-premium {
-    background-color: var(--crema); 
-    padding: 0;
+.footer-vertical {
+    background-color: #efeddf; /* Mismo color crema de fondo */
+    padding: 20px 0; /* Un poco de aire arriba y abajo */
     margin: 0;
     width: 100%;
     display: flex;
-    justify-content: center; 
-    line-height: 0;
+    justify-content: center; /* Centra el contenedor en laptops */
 }
 
-.contenedor-botones {
-    position: relative;
-    display: block;
+.contenedor-infografia {
+    position: relative; /* Clave para posicionar los botones absolutos */
     width: 100%;
-    max-width: 800px; /* IMPORTANTE: Coincide con el resto del catálogo */
+    max-width: 480px; /* Límite para que no se deforme en pantallas grandes */
     margin: 0 auto;
+    line-height: 0; /* Elimina espacios fantasma bajo la imagen */
 }
 
-/* Estilo de los botones */
-.btn-minimalista {
+.contenedor-infografia .imagen-fondo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Un borde suave opcional */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Sombra muy sutil */
+}
+
+/* --- ZONA DE CLIC PURA (SIN ESTILO VISUAL) --- */
+.btn-flotante-v2 {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px 14px;
-    border-radius: 20px; 
-    background-color: rgba(239, 237, 223, 0.95); 
-    border: 1px solid rgba(212, 175, 55, 0.5); 
-    color: #4a5d23;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.65rem; 
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.btn-minimalista:hover {
-    background-color: #efeddf;
-    border-color: rgba(212, 175, 55, 1);
-    transform: translateY(-2px);
-    cursor: pointer;
-}
-
-/* POSICIONAMIENTO SUPERIOR EXACTO */
-.btn-whatsapp {
-    top: 27%; /* Ajustado para quedar sobre el icono dorado */
-    left: 16.5%; 
     transform: translateX(-50%);
-}
-
-.btn-ubicacion {
-    top: 27%; /* Ajustado para quedar sobre el icono dorado */
-    right: 16.5%; 
-    transform: translateX(50%);
-}
-
-/* Asegura que el área del mapa de imagen también muestre la mano al pasar el mouse */
-area {
+    
+    /* ELIMINAMOS TODO LO VISUAL */
+    background: transparent !important;
+    border: none !important;
+    color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    
+    /* TAMAÑO DE LA ZONA DE CLIC */
+    width: 180px; 
+    height: 50px;
+    
+    display: block;
     cursor: pointer;
-    outline: none;
+    z-index: 100;
+}
+
+/* ESTO ELIMINA EL RECUADRO BLANCO AL PASAR EL MOUSE */
+.btn-flotante-v2:hover, 
+.btn-flotante-v2:active, 
+.btn-flotante-v2:focus {
+    background: transparent !important;
+    color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* --- POSICIONAMIENTO EXACTO SOBRE EL DIBUJO --- */
+
+/* Ajuste para el botón CONTACTAR (el verde de arriba) */
+.btn-wa-v2 {
+    top: 11.5%; 
+    left: 50%;
+}
+
+/* Ajuste para el botón VISÍTANOS (el bordó de abajo) */
+.btn-maps-v2 {
+    top: 61.2%; 
+    left: 50%;
 }
