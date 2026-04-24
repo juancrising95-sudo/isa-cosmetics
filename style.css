@@ -43,12 +43,12 @@ body{
 }
 
 /* Botones categorías */
-.z1{ top:58.5%; }
-.z2{ top:65.1%; }
-.z3{ top:71.7%; }
-.z4{ top:78.3%; }
-.z5{ top:84.9%; }
-.z6{ top:91.4%; }
+.z1{ top:55.5%; }
+.z2{ top:62.1%; }
+.z3{ top:68.7%; }
+.z4{ top:75.3%; }
+.z5{ top:81.9%; }
+.z6{ top:88.4%; }
 
 /* Botones contacto */
 .contacto{
@@ -215,4 +215,18 @@ body{
   .decoracion-lateral{
     display:none;
   }
+}
+
+/* ===== ZOOM PERFECTO EN CELULARES ===== */
+@media (max-width: 600px){
+
+    .pantalla{
+        max-width: 100%;
+    }
+
+    body{
+        padding-left:0;
+        padding-right:0;
+    }
+
 }
