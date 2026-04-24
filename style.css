@@ -230,3 +230,39 @@ body{
     }
 
 }
+
+/* ===== PROMOS EN CELULAR ===== */
+@media (max-width:1199px){
+
+.decoracion-lateral{
+    display:flex;
+    position:fixed;
+    width:100%;
+    height:auto;
+    left:0;
+    padding:10px;
+    flex-direction:row;
+    justify-content:center;
+    gap:10px;
+    z-index:999;
+}
+
+/* promo superior */
+.decoracion-lateral.izquierda{
+    top:0;
+    background:transparent;
+}
+
+/* promo inferior */
+.decoracion-lateral.derecha{
+    bottom:0;
+    background:transparent;
+}
+
+/* tarjetas más pequeñas */
+.promo-box{
+    width:45%;
+    padding:12px;
+    font-size:12px;
+}
+}
