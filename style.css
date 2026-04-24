@@ -1,247 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;600&display=swap');
+body{
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-family:Poppins;
 
-:root {
-    --verde-profundo: #4a5d23;  
-    --verde-oliva: #adc15d;
-    --crema: #efeddf;
-    --fucsia-claro: #ff5c8d;    
+    /* NUEVO FONDO GENERAL PREMIUM */
+    background: linear-gradient(
+        180deg,
+        #efeddf 0%,
+        #e6e4d3 40%,
+        #dfe6c3 100%
+    );
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: var(--crema);
+/* Cada pantalla */
+.pantalla{
+    position:relative;
+    width:100%;
+    max-width:900px;
+    z-index:2;
 }
 
-/* --- SECCIÓN 1: AJUSTE DE CABECERA --- */
+/* Tus imágenes intactas */
+.img-fondo{
+    width:100%;
+    display:block;
+}
 
-.header-principal {
-    background-color: #4a5d23; 
-    display: flex;
+/* Capa invisible adaptable */
+.zonas-click{
+    position:absolute;
+    inset:0;
+}
+
+/* Zonas generales */
+.zona{
+    position:absolute;
+    left:0;
+    width:100%;
+    height:6.5%;
+}
+
+/* Botones categorías */
+.z1{ top:58.5%; }
+.z2{ top:65.1%; }
+.z3{ top:71.7%; }
+.z4{ top:78.3%; }
+.z5{ top:84.9%; }
+.z6{ top:91.4%; }
+
+/* Botones contacto */
+.contacto{
+    top:18%;
+    height:20%;
+}
+
+.mapa{
+    top:57%;
+    height:20%;
+}
+
+/* ===== LATERALES PREMIUM COSMÉTICA ===== */
+
+.decoracion-lateral {
+    position: fixed;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    padding: 40px 18px;
+    display: none;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
+    gap: 28px;
+    z-index:1;
+
+    /* NUEVO degradado verde elegante */
+    background: linear-gradient(
+        180deg,
+        #4a5d23 0%,
+        #5f7330 40%,
+        #adc15d 100%
+    );
+
+    /* profundidad */
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.18);
 }
 
-.contenedor-banner {
-    width: 100%;       
-    max-width: 450px;  
-    margin: 0 auto;
-    padding: 0;
-    line-height: 0;
-    display: block;
+/* Tarjetas promo versión PREMIUM */
+.promo-box {
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.95),
+        rgba(255,255,255,0.75)
+    );
+
+    padding:18px;
+    border-radius:18px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.25),
+        inset 0 0 8px rgba(255,255,255,0.5);
+
+    text-align:center;
+    animation: flotar 6s ease-in-out infinite;
 }
 
-.main-logo {
-    width: 100%; 
-    height: auto;
-    display: block;
-    margin: 0;
+/* Texto promo */
+.promo-box h3 {
+    margin:0;
+    color:#4a5d23;
+    font-size:16px;
+    font-weight:600;
 }
 
-.location {
-    display: none;       
+.promo-box p {
+    margin-top:6px;
+    font-size:13px;
+    color:#333;
 }
 
-/* --- SECCIÓN 2: CONTENIDO INFERIOR --- */
-
-.brand-content-oliva {
-    background-color: #adc15d; 
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 0;
+/* Animación flotante más elegante */
+@keyframes flotar {
+    0% { transform: translateY(0px);}
+    50% { transform: translateY(-18px);}
+    100% { transform: translateY(0px);}
 }
 
-.brand-content-oliva .contenedor-banner {
-    width: 100%;
-    max-width: 450px; 
-    margin: 0 auto;
-    padding: 0;
-}
+/* SOLO aparece en pantallas grandes */
+@media (min-width:1200px){
+    .decoracion-lateral{
+        display:flex;
+    }
 
-/* --- AJUSTE DINÁMICO PARA LAPTOP --- */
-
-/* --- SOLO PARA CELULARES: ENFOQUE DE SECCIONES --- */
-
-.contenedor-infografia {
-    position: relative;
-    width: 100%;
-    max-width: 450px; /* Tamaño igual a tus categorías superiores */
-    margin: 0 auto;
-    line-height: 0;
-}
-
-/* Esta regla hará que en celular se estire al 100% como los de arriba */
-@media (max-width: 767px) {
-    .contenedor-infografia {
-        max-width: 100% !important;
+    body{
+        padding-left:260px;
+        padding-right:260px;
     }
 }
 
-/* --- PROTECCIÓN PARA LAPTOP (Para que no se vea gigante en PC) --- */
-@media (min-width: 1024px) {
-    .contenedor-infografia {
-        max-width: 450px; /* Misma medida que tus banners de arriba */
-    }
+/* ===== ESPACIO LATERAL GENERAL ===== */
+body{
+  margin:0;
+  background:#f7f5f0;
+  overflow-x:hidden;
 }
 
-    .main-logo {
-        box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
-    }
-
-
-/* --- SECCIÓN FINAL: INFOGRAFÍA VERTICAL --- */
-
-/* REEMPLAZO FINAL LIMPIO */
-.footer-vertical {
-    background-color: var(--crema);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
+/* ===== CONTENEDORES LATERALES ===== */
+.decoracion-lateral{
+  position:fixed;
+  top:0;
+  width:140px;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  z-index:10;
+  pointer-events:none;
 }
 
-.contenedor-infografia {
-    position: relative;
-    width: 100%;
-    max-width: 450px; /* Tamaño laptop */
-    line-height: 0;
+.izquierda{
+  left:0;
 }
 
-.contenedor-infografia .imagen-fondo {
-    width: 100%;
-    height: auto;
-    display: block;
+.derecha{
+  right:0;
 }
 
-/* LA REGLA MÁGICA PARA EL CELULAR */
-@media (max-width: 767px) {
-    .contenedor-infografia {
-        max-width: 100% !important; /* Aquí es donde se hace grande como los otros */
-    }
+/* ===== CAJAS PROMO ===== */
+.promo-box{
+  width:110px;
+  padding:12px;
+  border-radius:14px;
+  text-align:center;
+  font-family:sans-serif;
+  animation:flotar 6s ease-in-out infinite;
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
 }
 
-.contenedor-infografia .imagen-fondo {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px; /* Un borde suave opcional */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Sombra muy sutil */
+/* Colores que combinan con tu web */
+.promo-box:nth-child(1){
+  background:#1f5c4c;
+  color:white;
 }
 
-/* --- ZONA DE CLIC PURA (SIN ESTILO VISUAL) --- */
-.btn-flotante-v2 {
-    position: absolute;
-    transform: translateX(-50%);
-    
-    /* ELIMINAMOS TODO LO VISUAL */
-    background: transparent !important;
-    border: none !important;
-    color: transparent !important;
-    box-shadow: none !important;
-    outline: none !important;
-    
-    /* TAMAÑO DE LA ZONA DE CLIC */
-    width: 450px; 
-    height: 150px;
-    
-    display: block;
-    cursor: pointer;
-    z-index: 100;
+.promo-box:nth-child(2){
+  background:#6fb3a3;
+  color:white;
 }
 
-/* ESTO ELIMINA EL RECUADRO BLANCO AL PASAR EL MOUSE */
-.btn-flotante-v2:hover, 
-.btn-flotante-v2:active, 
-.btn-flotante-v2:focus {
-    background: transparent !important;
-    color: transparent !important;
-    box-shadow: none !important;
+/* Lado derecho colores crema */
+.derecha .promo-box:nth-child(1){
+  background:#efe9dc;
+  color:#1f5c4c;
 }
 
-/* --- POSICIONAMIENTO EXACTO SOBRE EL DIBUJO --- */
-
-/* Ajuste para el botón invisible de CONTACTAR */
-.btn-wa-v2 {
-    top: 18%; /* Valor ajustado para imagen grande */
-    left: 50%;
+.derecha .promo-box:nth-child(2){
+  background:#dfe8e4;
+  color:#1f5c4c;
 }
 
-/* Ajuste para el botón invisible de VISÍTANOS */
-.btn-maps-v2 {
-    top: 57%; /* Valor ajustado para imagen grande */
-    left: 50%;
+/* Movimiento flotante */
+@keyframes flotar{
+  0%{ transform:translateY(-15px);}
+  50%{ transform:translateY(15px);}
+  100%{ transform:translateY(-15px);}
 }
 
-/* --- ENFOQUE DE SECCIONES (SIN CAMBIAR TAMAÑOS) --- */
-
-
-/* --- PROTECCIÓN PARA LAPTOP: 
-      Aquí desactivamos el imán para que en computadoras el scroll sea libre y grande */
-@media (min-width: 1024px) {
-    html, body {
-        scroll-snap-type: none; 
-    }
-    
-    .contenedor-banner {
-        max-width: 100% !important; /* Recupera el ancho total */
-        width: 100%;
-    }
+/* ===== AJUSTE RESPONSIVE ===== */
+@media (max-width:1100px){
+  .decoracion-lateral{
+    display:none;
+  }
 }
-
-/* Botones visibles sobre la imagen */
-.btn-ver-mas {
-    position: absolute;
-    right: 15%; /* Esto los mueve más hacia la izquierda, centrándolos en la zona de las flechas */
-    width: 60px;
-    padding: 8px 0;
-    background-color: var(--verde-profundo);
-    color: white;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 600;
-    border-radius: 4px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.2);
-    z-index: 100;
-    display: block;
-}
-
-.btn-ver-mas:active {
-    background-color: #adc15d; /* Cambio de color al tocar */
-    transform: scale(0.95);
-}
-
-.pantalla-productos {
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--crema);
-}
-
-.btn-regresar {
-    display: block;
-    width: 80%;
-    max-width: 300px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: var(--verde-profundo);
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    text-align: center;
-}
- 
