@@ -9,6 +9,8 @@
 
 <body>
 
+<div class="sparkles"></div>
+
 <!-- ⭐ LATERALES DECORATIVOS ⭐ -->
 <div class="decoracion-lateral izquierda">
     <div class="promo-box">
@@ -40,17 +42,16 @@
 </section>
 
 <!-- SECCIÓN 2 CATEGORÍAS -->
-<section class="pantalla">
+<section class="pantalla" id="seccion-categorias">
     <img src="assets/categorías.png" class="img-fondo">
 
     <div class="zonas-click">
-        <a href="facial.html" class="zona z1"></a>
-        <a href="corporal.html" class="zona z2"></a>
-        <a href="capilar.html" class="zona z3"></a>
-        <a href="maquillaje.html" class="zona z4"></a>
-        <a href="proteccion.html" class="zona z5"></a>
-        <a href="perfumes.html" class="zona z6"></a>
-    </div>
+        <a href="facial.html" class="zona z1" onclick="guardarCatalogo()"></a>
+<a href="corporal.html" class="zona z2" onclick="guardarCatalogo()"></a>
+<a href="capilar.html" class="zona z3" onclick="guardarCatalogo()"></a>
+<a href="maquillaje.html" class="zona z4" onclick="guardarCatalogo()"></a>
+<a href="proteccion.html" class="zona z5" onclick="guardarCatalogo()"></a>
+<a href="perfumes.html" class="zona z6" onclick="guardarCatalogo()"></a>
 </section>
 
 <!-- SECCIÓN 3 CONTACTO -->
@@ -63,5 +64,25 @@
     </div>
 </section>
 
+<script src="sparkles.js"></script>
+
+<script>
+/* Guardar posición REAL antes de salir del catálogo */
+function guardarCatalogo(){
+    sessionStorage.setItem("scrollPos", window.scrollY);
+}
+
+/* Restaurar posición EXACTA al volver */
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollPos = sessionStorage.getItem("scrollPos");
+
+    if (scrollPos !== null) {
+        window.scrollTo(0, parseInt(scrollPos));
+        sessionStorage.removeItem("scrollPos");
+    }
+});
+</script>
+</body>
+</html>
 </body>
 </html>

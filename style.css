@@ -1,11 +1,23 @@
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
     display:flex;
     flex-direction:column;
     align-items:center;
     font-family:Poppins;
+    position:relative;
+    z-index:1;
+}
 
-    /* NUEVO FONDO GENERAL PREMIUM */
+/* Fondo general ahora es una capa independiente */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
     background: linear-gradient(
         180deg,
         #efeddf 0%,
@@ -19,7 +31,7 @@ body{
     position:relative;
     width:100%;
     max-width:900px;
-    z-index:2;
+    z-index:1;
 }
 
 /* Tus imágenes intactas */
@@ -163,4 +175,130 @@ body{
         padding-top:70px;
         padding-bottom:70px;
     }
+}
+
+/* ===================================================== */
+/* ✨ DESTELLO COSMÉTICO PREMIUM (NUEVA VERSION PRO) */
+/* ===================================================== */
+
+.sparkles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:5;
+    overflow:hidden;
+}
+
+/* Destello diagonal suave */
+.sparkles::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    top:20%;
+    left:-30%;
+
+    /* DESTELLO RADIAL (sin bordes rectos) */
+    background: radial-gradient(
+        circle at center,
+        rgba(255,255,255,0.18) 0%,
+        rgba(255,255,255,0.10) 20%,
+        rgba(255,255,255,0.05) 35%,
+        rgba(255,255,255,0.02) 50%,
+        transparent 70%
+    );
+
+    filter: blur(25px);
+    animation: brilloMove 10s ease-in-out infinite;
+}
+/* Pequeños destellos dorados puntuales */
+.sparkles::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(circle, rgba(255,215,120,0.35) 1px, transparent 2px);
+    background-size: 180px 180px;
+    opacity:.35;
+    animation: particulas 18s linear infinite;
+}
+
+@keyframes brilloMove{
+    0%   { transform: translate(-30%, -10%) scale(0.9); opacity:.3; }
+    50%  { transform: translate(140%, 10%) scale(1.1); opacity:.55; }
+    100% { transform: translate(260%, -5%) scale(0.9); opacity:.3; }
+}
+
+@keyframes particulas{
+    from{ transform:translateY(0); }
+    to{ transform:translateY(-400px); }
+}
+
+/* ============================= */
+/* PAGINAS DE CATEGORIA */
+/* ============================= */
+
+.pagina-categoria{
+    min-height:100vh;
+    padding:40px 20px;
+}
+
+/* Botón volver */
+.btn-volver{
+    position:fixed;
+    top:20px;
+    left:20px;
+    background:white;
+    padding:10px 18px;
+    border-radius:30px;
+    text-decoration:none;
+    color:#4a5d23;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    z-index:999;
+}
+
+/* Encabezado */
+.header-categoria{
+    text-align:center;
+    margin-top:60px;
+    margin-bottom:40px;
+}
+
+.header-categoria h1{
+    font-size:32px;
+    color:#4a5d23;
+    margin-bottom:10px;
+}
+
+.header-categoria p{
+    color:#6c7a3c;
+}
+
+/* Grid de marcas */
+.grid-marcas{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+/* Tarjetas de marca */
+.marca{
+    background:white;
+    height:120px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    color:#4a5d23;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    transition:.3s;
+}
+
+.marca:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.18);
 }
