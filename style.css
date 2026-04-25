@@ -61,84 +61,6 @@ body{
     height:20%;
 }
 
-/* ===== LATERALES PREMIUM COSMÉTICA ===== */
-
-.decoracion-lateral {
-    position: fixed;
-    top: 0;
-    width: 260px;
-    height: 100vh;
-    padding: 40px 18px;
-    display: none;
-    flex-direction: column;
-    gap: 28px;
-    z-index:1;
-
-    /* NUEVO degradado verde elegante */
-    background: linear-gradient(
-        180deg,
-        #4a5d23 0%,
-        #5f7330 40%,
-        #adc15d 100%
-    );
-
-    /* profundidad */
-    box-shadow: inset 0 0 40px rgba(0,0,0,0.18);
-}
-
-/* Tarjetas promo versión PREMIUM */
-.promo-box {
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.95),
-        rgba(255,255,255,0.75)
-    );
-
-    padding:18px;
-    border-radius:18px;
-
-    backdrop-filter: blur(6px);
-
-    box-shadow:
-        0 12px 28px rgba(0,0,0,0.25),
-        inset 0 0 8px rgba(255,255,255,0.5);
-
-    text-align:center;
-    animation: flotar 6s ease-in-out infinite;
-}
-
-/* Texto promo */
-.promo-box h3 {
-    margin:0;
-    color:#4a5d23;
-    font-size:16px;
-    font-weight:600;
-}
-
-.promo-box p {
-    margin-top:6px;
-    font-size:13px;
-    color:#333;
-}
-
-/* Animación flotante más elegante */
-@keyframes flotar {
-    0% { transform: translateY(0px);}
-    50% { transform: translateY(-18px);}
-    100% { transform: translateY(0px);}
-}
-
-/* SOLO aparece en pantallas grandes */
-@media (min-width:1200px){
-    .decoracion-lateral{
-        display:flex;
-    }
-
-    body{
-        padding-left:260px;
-        padding-right:260px;
-    }
-}
 
 /* ===================================================== */
 /* SISTEMA OFERTAS RESPONSIVE PROFESIONAL */
@@ -232,5 +154,13 @@ body{
     .promo-box{
         width:45%;
         animation:none;
+    }
+}
+
+/* AJUSTE FINAL MOVIL (espacio para barras promo) */
+@media (max-width:1199px){
+    body{
+        padding-top:70px;
+        padding-bottom:70px;
     }
 }
