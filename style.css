@@ -296,9 +296,106 @@ body::before{
     color:#4a5d23;
     box-shadow:0 8px 25px rgba(0,0,0,0.12);
     transition:.3s;
+    cursor:pointer;
+    text-decoration:none;
 }
 
 .marca:hover{
     transform:translateY(-6px);
     box-shadow:0 15px 35px rgba(0,0,0,0.18);
+}
+
+/* 📱 CATEGORIAS EN CELULAR → UNA SOLA COLUMNA */
+@media (max-width:768px){
+    .grid-marcas{
+        grid-template-columns:1fr;
+        max-width:420px;
+    }
+
+    .marca{
+        height:90px;
+        font-size:18px;
+    }
+}
+
+#ancla-categorias{
+    position:absolute;
+    top:60%;
+}
+
+/* ============================= */
+/* PAGINA DE PRODUCTOS (MARCAS) */
+/* ============================= */
+
+.header-marca{
+    text-align:center;
+    margin-top:70px;
+    margin-bottom:30px;
+}
+
+.header-marca h1{
+    font-size:34px;
+    color:#4a5d23;
+    margin-bottom:10px;
+}
+
+.header-marca p{
+    color:#6c7a3c;
+}
+
+/* Grid productos */
+.grid-productos{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:20px;
+}
+
+/* Tarjeta producto */
+.producto{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:.3s;
+}
+
+.producto:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,0.2);
+}
+
+.producto img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.info-producto{
+    padding:18px;
+}
+
+.info-producto h3{
+    margin:0;
+    color:#4a5d23;
+}
+
+.info-producto p{
+    font-size:14px;
+    color:#666;
+    margin:8px 0 15px;
+}
+
+/* Botón WhatsApp */
+.btn-wsp{
+    display:block;
+    text-align:center;
+    background:#25D366;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
 }

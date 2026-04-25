@@ -3,31 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facial | ISA COSMETICS</title>
+<title>Categoría Facial</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="pagina-categoria">
 
-<a href="index.html#botones-categorias" class="btn-volver" onclick="volverCatalogo(event)">
-   ← Volver al catálogo
-</a>
+<!-- BOTÓN VOLVER -->
+<a href="index.html" class="btn-volver" onclick="volverCatalogo()">← Volver al catálogo</a>
 
-<section class="header-categoria">
-    <h1>CUIDADO FACIAL</h1>
-    <p>Las mejores marcas para tu piel</p>
-</section>
+<div class="header-categoria">
+    <h1>Cuidado Facial</h1>
+    <p>Selecciona una marca</p>
+</div>
 
-<section class="grid-marcas">
+<div class="grid-marcas">
+    <a href="marcas/facial/nivea.html" class="marca">NIVEA</a>
+    <a href="marcas/facial/garnier.html" class="marca">GARNIER</a>
+    <a href="marcas/facial/ponds.html" class="marca">PONDS</a>
+</div>
 
-    <div class="marca">CERAVE</div>
-    <div class="marca">LA ROCHE POSAY</div>
-    <div class="marca">GARNIER</div>
-    <div class="marca">NIVEA</div>
-    <div class="marca">L'ORÉAL</div>
-    <div class="marca">NEUTROGENA</div>
-
-</section>
+<script>
+function volverCatalogo(){
+    sessionStorage.setItem("volverCatalogo","si");
+}
+</script>
 
 </body>
 </html>
