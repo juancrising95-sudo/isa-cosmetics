@@ -275,34 +275,42 @@ body::before{
     color:#6c7a3c;
 }
 
-/* Grid de marcas */
+/* Grid marcas escritorio */
 .grid-marcas{
     max-width:900px;
     margin:auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:25px;
+    padding:20px;
 }
 
-/* Tarjetas de marca */
+/* 📱 En celular = LISTA VERTICAL */
+@media (max-width:768px){
+    .grid-marcas{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+}
+
 .marca{
     background:white;
-    height:120px;
-    border-radius:18px;
+    height:80px;
+    border-radius:16px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:600;
+    font-weight:700;
     color:#4a5d23;
-    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
     transition:.3s;
-    cursor:pointer;
     text-decoration:none;
+    font-size:18px;
 }
 
 .marca:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.18);
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.18);
 }
 
 /* 📱 CATEGORIAS EN CELULAR → UNA SOLA COLUMNA */

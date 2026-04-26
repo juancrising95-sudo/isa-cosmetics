@@ -3,55 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capilar</title>
+<title>Categoría Capilar</title>
 <link rel="stylesheet" href="style.css">
-
-<style>
-body{
-    background:#f7f5f0;
-    font-family:Poppins;
-    text-align:center;
-}
-
-.header{
-    padding:30px 20px;
-    font-size:28px;
-    font-weight:600;
-    color:#1f5c4c;
-}
-
-.marcas{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-    padding:20px;
-    max-width:700px;
-    margin:auto;
-}
-
-.marca{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    font-size:18px;
-    text-decoration:none;
-    color:#1f5c4c;
-    font-weight:600;
-}
-</style>
-
 </head>
-<body>
 
-<div class="header">CAPILAR</div>
+<body class="pagina-categoria">
 
-<div class="marcas">
-<a href="#" class="marca">Maybelline</a>
-<a href="#" class="marca">L'Oréal</a>
-<a href="#" class="marca">NYX</a>
-<a href="#" class="marca">Revlon</a>
+<!-- BOTÓN VOLVER -->
+<a href="index.html" class="btn-volver" onclick="volverCatalogo()">← Volver al catálogo</a>
+
+<div class="header-categoria">
+    <h1>Cuidado Capilar</h1>
+    <p>Marcas disponibles</p>
 </div>
+
+<div class="grid-marcas">
+    <a href="marcas/capilar/nivea.html" class="marca">NIVEA</a>
+    <a href="marcas/capilar/garnier.html" class="marca">GARNIER</a>
+    <a href="marcas/capilar/ponds.html" class="marca">PONDS</a>
+    <a href="marcas/capilar/ponds.html" class="marca">LACA</a>
+</div>
+
+<script>
+function volverCatalogo(){
+    sessionStorage.setItem("volverCatalogo","si");
+}
+</script>
 
 </body>
 </html>
