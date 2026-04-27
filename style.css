@@ -407,3 +407,20 @@ body::before{
     text-decoration:none;
     font-weight:600;
 }
+
+/* ============================= */
+/* FONDO EXCLUSIVO MARCA UMBRELLA */
+/* ============================= */
+
+body.umbrella::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #0047AB 200%,
+        #bde6ff 40%,
+        #a9ddff 100%
+    );
+}
