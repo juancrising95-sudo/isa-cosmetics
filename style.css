@@ -467,15 +467,14 @@ body.umbrella::before{
 }
 
 /* ============================= */
-/* AGRANDAR SECCION CATEGORIAS EN MOVIL */
+/* SOLO AGRANDAR SECCION CATEGORIAS EN MOVIL */
 /* ============================= */
 
-@media (max-width:1199px){
+@media (max-width:768px){
 
-    .pantalla-categorias{
-        max-width:1100px;   /* antes era 900 */
-        transform:scale(1.15);
-        transform-origin: top center;
+    .img-categorias{
+        transform:scale(1.18);
+        transform-origin:top center;
     }
 
 }
