@@ -26,12 +26,13 @@ body::before{
     );
 }
 
-/* Cada pantalla */
+/* Cada pantalla ocupa la altura del teléfono */
 .pantalla{
     position:relative;
     width:100%;
     max-width:900px;
-    z-index:1;
+    height:100vh;          /* 🔴 ESTA LINEA ES LA CLAVE */
+    overflow:hidden;       /* evita espacios raros */
 }
 
 /* Tus imágenes intactas */
@@ -466,15 +467,11 @@ body.umbrella::before{
     );
 }
 
-/* ============================= */
-/* SOLO AGRANDAR SECCION CATEGORIAS EN MOVIL */
-/* ============================= */
-
+/* 📱 Sección categorías más grande SOLO en móvil */
 @media (max-width:768px){
 
-    .img-categorias{
-        transform:scale(1.18);
-        transform-origin:top center;
+    .pantalla-categorias{
+        height:115vh;   /* más espacio vertical real */
     }
 
 }
