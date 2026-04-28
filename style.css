@@ -408,6 +408,47 @@ body::before{
     font-weight:600;
 }
 
+/* 📱 PRODUCTOS EN CELULAR → UNA SOLA COLUMNA */
+@media (max-width:1199px){
+
+    .grid-productos{
+        grid-template-columns:1fr;
+        gap:22px;
+        padding:15px;
+    }
+
+    .producto img{
+        height:260px; /* se ven más grandes en móvil */
+    }
+
+}
+
+/* Centrar contenido de las tarjetas de producto */
+.producto{
+    text-align:center;
+}
+
+.info-producto{
+    text-align:center;
+}
+
+.producto h3{
+    text-align:center;
+}
+
+.producto p{
+    text-align:center;
+}
+
+.precio{
+    display:block;
+    text-align:center;
+    font-weight:700;
+    font-size:18px;
+    color:#4a5d23;
+    margin:10px 0;
+}
+
 /* ============================= */
 /* FONDO EXCLUSIVO MARCA UMBRELLA */
 /* ============================= */
@@ -423,4 +464,18 @@ body.umbrella::before{
         #bde6ff 40%,
         #a9ddff 100%
     );
+}
+
+/* ============================= */
+/* AGRANDAR SECCION CATEGORIAS EN MOVIL */
+/* ============================= */
+
+@media (max-width:1199px){
+
+    .pantalla-categorias{
+        max-width:1100px;   /* antes era 900 */
+        transform:scale(1.15);
+        transform-origin: top center;
+    }
+
 }
