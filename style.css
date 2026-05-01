@@ -449,7 +449,7 @@ body::before{
 }
 
 /* ============================= */
-/* FONDO EXCLUSIVO MARCA UMBRELLA */
+/* FONDO EXCLUSIVO MARCAS */
 /* ============================= */
 
 body.umbrella::before{
@@ -459,12 +459,63 @@ body.umbrella::before{
     z-index:-1;
     background: linear-gradient(
         180deg,
-        #0047AB 200%,
+        #0047AB 0%,
         #bde6ff 40%,
         #a9ddff 100%
     );
 }
 
+body.laca::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #000000 0%,
+        #000000 40%,
+        #a9ddff 100%
+    );
+}
+
+body.isdin::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #FFA500 0%,
+        #FFA500 40%,
+        #a9ddff 100%
+    );
+}
+
+body.natura::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #228B22 0%,
+        #228B22 40%,
+        #a9ddff 100%
+    );
+}
+
+body.laroche::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background: linear-gradient(
+        180deg,
+        #80BFFF 0%,
+        #80BFFF 40%,
+        #a9ddff 100%
+    );
+}
 /* ============================= */
 /* SOLO AJUSTE IMAGEN CATEGORIAS EN MOVIL */
 /* ============================= */
@@ -479,3 +530,41 @@ body.umbrella::before{
 
 }
 
+/* ============================= */
+/* FONDO INTERNO CATEGORIAS */
+/* ============================= */
+
+.fondo-categoria{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background-position:center;
+    background-size:cover;
+    background-attachment:fixed;
+    opacity:0.25; /* 🔥 clave: suave para ver botones */
+}
+
+/* fondos por categoría */
+.fondo-solar{
+    background-image:url("assets/fondos-categorias/solar.jpg");
+}
+
+.fondo-facial{
+    background-image:url("assets/fondos-categorias/facial.jpg");
+}
+
+.fondo-capilar{
+    background-image:url("assets/fondos-categorias/capilar.jpg");
+}
+
+
+
+/* FONDOS POR CATEGORIA */
+.fondo-solar{
+    background-image:url("assets/fondos-categorias/solar.jpg");
+}
+
+/* 🔥 APAGAR FONDO GLOBAL EN PAGINAS INTERNAS (CORRECTO) */
+body.pagina-categoria::before{
+    background:none !important;
+}
