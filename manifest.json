@@ -1,7 +1,7 @@
 {
   "name": "ISA Cosmetics",
   "short_name": "ISA",
-  "start_url": "index.html?v=2",
+  "start_url": "index.html?v=3",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
