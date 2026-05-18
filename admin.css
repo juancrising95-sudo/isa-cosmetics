@@ -421,3 +421,11 @@ body.admin-body {
   border-radius: 6px;
   background: #333;
 }
+
+/* Corrección para el campo de descripción en el modal */
+.modal-box textarea {
+  min-height: 100px;    /* 1. Le da una altura inicial cómoda para leer */
+  flex-shrink: 0;       /* 2. ¡La clave! Evita que Flexbox lo aplaste si el modal se llena */
+  line-height: 1.5;     /* 3. Da espacio a las letras para que no se corten por arriba o abajo */
+  resize: vertical;     /* 4. Permite al usuario agrandarlo hacia abajo si escribe mucho */
+}
