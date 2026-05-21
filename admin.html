@@ -9,6 +9,7 @@
 </head>
 <body class="admin-body">
 
+  <!-- LOGIN -->
   <div id="pantalla-login">
     <div class="login-box">
       <h2>🔐 Acceso Administrador</h2>
@@ -20,6 +21,7 @@
     </div>
   </div>
 
+  <!-- PANEL -->
   <div id="panel-admin" style="display:none">
     <div class="admin-header">
       <h1>⚙️ Panel Admin — ISA Cosmetics</h1>
@@ -35,11 +37,13 @@
       <button class="tab-btn" data-tab="promociones">🎯 Promociones</button>
     </div>
 
+    <!-- TAB PRODUCTOS -->
     <div id="tab-productos" class="tab-contenido">
       <div class="seccion-header">
         <h2>Productos</h2>
         <button id="btn-nuevo-producto" class="btn-agregar">+ Agregar producto</button>
       </div>
+
       <div class="filtros">
         <select id="filtro-categoria"><option value="">Todas las categorías</option></select>
         <select id="filtro-marca"><option value="">Todas las marcas</option></select>
@@ -51,45 +55,56 @@
       <div id="lista-productos" class="lista-admin"></div>
     </div>
 
+    <!-- TAB MARCAS -->
     <div id="tab-marcas" class="tab-contenido" style="display:none">
       <div class="seccion-header">
-        <h2>Marcas</h2>
-        <button id="btn-nueva-marca" class="btn-agregar">+ Agregar marca</button>
-      </div>
+  <h2>Marcas</h2>
+
+  <button id="btn-nueva-marca" class="btn-agregar">
+    + Agregar marca
+  </button>
+</div>
+
+<div class="barra-busqueda">
+  <span id="contador-marcas"></span>
+</div>
       <div id="lista-marcas" class="lista-admin"></div>
     </div>
 
+    <!-- TAB PROMOCIONES -->
     <div id="tab-promociones" class="tab-contenido" style="display:none">
       <div class="seccion-header">
         <h2>Promociones</h2>
-        <button id="btn-nuevo-banner" class="btn-agregar">+ Agregar banner</button>
+        <button id="btn-nueva-promo" class="btn-agregar">+ Agregar promoción</button>
       </div>
-      <div id="lista-banners" class="lista-admin"></div>
+      <p style="color:#aaa;font-size:0.85rem;padding:0 0 12px 0">
+        Sube aquí la imagen de promoción. Se guarda en Supabase y puedes usarla cuando quieras.
+      </p>
+      <div id="lista-promociones" class="lista-admin"></div>
     </div>
   </div>
 
+  <!-- MODAL PRODUCTO -->
   <div id="modal-producto" class="modal" style="display:none">
     <div class="modal-box">
-      <h3 id="modal-titulo">Producto</h3>
+      <h3 id="modal-prod-titulo">Producto</h3>
       <input type="hidden" id="prod-id">
       <input type="hidden" id="prod-imagen">
-
       <label>Imagen del producto</label>
       <div class="imagen-preview-box">
-        <img id="preview-imagen" src="" alt="Preview" style="display:none">
-        <div id="preview-placeholder">Sin imagen</div>
+        <img id="preview-prod-imagen" src="" alt="Preview" style="display:none">
+        <div id="preview-prod-placeholder">Sin imagen</div>
       </div>
       <div class="imagen-botones">
-        <input type="file" id="input-imagen" accept="image/*" style="display:none">
-        <button type="button" id="btn-cambiar-imagen" class="btn-imagen">📷 Subir imagen</button>
-        <button type="button" id="btn-quitar-imagen" class="btn-imagen btn-imagen-quitar">🗑️ Quitar imagen</button>
+        <input type="file" id="input-prod-imagen" accept="image/*" style="display:none">
+        <button type="button" id="btn-subir-prod-imagen" class="btn-imagen">📷 Subir imagen</button>
+        <button type="button" id="btn-quitar-prod-imagen" class="btn-imagen btn-imagen-quitar">🗑️ Quitar</button>
       </div>
-      <p id="upload-status"></p>
-
+      <p id="upload-prod-status"></p>
       <label>Nombre</label>
       <input type="text" id="prod-nombre" placeholder="Nombre del producto">
       <label>Descripción</label>
-      <textarea id="prod-descripcion" rows="4" placeholder="Descripción"></textarea>
+      <textarea id="prod-descripcion" rows="5" placeholder="Descripción del producto"></textarea>
       <label>Precio (Bs)</label>
       <input type="text" id="prod-precio" placeholder="Ej: 150">
       <label>Categoría</label>
@@ -104,13 +119,79 @@
         <button id="btn-guardar-producto" class="btn-guardar">Guardar</button>
         <button id="btn-cancelar-producto" class="btn-cancelar">Cancelar</button>
       </div>
-      <p id="modal-error"></p>
+      <p id="modal-prod-error"></p>
     </div>
   </div>
+
+  <!-- MODAL MARCA -->
+  <div id="modal-marca" class="modal" style="display:none">
+    <div class="modal-box">
+      <h3 id="modal-marca-titulo">Marca</h3>
+      <input type="hidden" id="marca-id">
+      <input type="hidden" id="marca-logo">
+      <label>Logo de la marca</label>
+      <div class="imagen-preview-box">
+        <img id="preview-marca-logo" src="" alt="Logo" style="display:none">
+        <div id="preview-marca-placeholder">Sin logo</div>
+      </div>
+      <div class="imagen-botones">
+        <input type="file" id="input-marca-logo" accept="image/*" style="display:none">
+        <button type="button" id="btn-subir-marca-logo" class="btn-imagen">📷 Subir logo</button>
+        <button type="button" id="btn-quitar-marca-logo" class="btn-imagen btn-imagen-quitar">🗑️ Quitar</button>
+      </div>
+      <p id="upload-marca-status"></p>
+      <label>Nombre de la marca</label>
+      <input type="text" id="marca-nombre" placeholder="Ej: NIVEA">
+      
+      <label>Orden (número para ordenar)</label>
+      <input type="number" id="marca-orden" placeholder="Ej: 1">
+      <label class="check-label">
+        <input type="checkbox" id="marca-activo" checked>
+        Marca activa (visible en catálogo)
+      </label>
+      <div class="modal-botones">
+        <button id="btn-guardar-marca" class="btn-guardar">Guardar</button>
+        <button id="btn-cancelar-marca" class="btn-cancelar">Cancelar</button>
+      </div>
+      <p id="modal-marca-error"></p>
+    </div>
+  </div>
+
+  <!-- MODAL PROMOCION -->
+<div id="modal-promo" class="modal" style="display:none">
+  <div class="modal-box">
+    <h3 id="modal-promo-titulo">Promoción</h3>
+    <input type="hidden" id="promo-id">
+    <input type="hidden" id="promo-imagen">
+    <label>Imagen de la promoción</label>
+    <div class="imagen-preview-box">
+      <img id="preview-promo-imagen" src="" alt="Promo" style="display:none">
+      <div id="preview-promo-placeholder">Sin imagen</div>
+    </div>
+    <div class="imagen-botones">
+      <input type="file" id="input-promo-imagen" accept="image/*" style="display:none">
+      <button type="button" id="btn-subir-promo-imagen" class="btn-imagen">📷 Subir imagen</button>
+      <button type="button" id="btn-quitar-promo-imagen" class="btn-imagen btn-imagen-quitar">🗑️ Quitar</button>
+    </div>
+    <p id="upload-promo-status"></p>
+    <label>Título (referencia interna)</label>
+    <input type="text" id="promo-titulo" placeholder="Ej: Promo Mayo 2026">
+    <label class="check-label">
+      <input type="checkbox" id="promo-activo" checked>
+      Promoción activa
+    </label>
+    <div class="modal-botones">
+      <button id="btn-guardar-promo" class="btn-guardar">Guardar</button>
+      <button id="btn-cancelar-promo" class="btn-cancelar">Cancelar</button>
+    </div>
+    <p id="modal-promo-error"></p>
+  </div>
+</div>
 
 <script type="module">
 import { supabase } from "./supabase.js"
 
+// ── AUTH ──────────────────────────────────────────
 const { data: { session } } = await supabase.auth.getSession()
 if (session) iniciarPanel(session.user.email)
 
@@ -137,6 +218,7 @@ function iniciarPanel(email) {
   cargarTodo()
 }
 
+// ── TABS ──────────────────────────────────────────
 document.querySelectorAll(".tab-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("activo"))
@@ -146,6 +228,7 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
   })
 })
 
+// ── DATOS GLOBALES ────────────────────────────────
 let categorias = []
 let marcas = []
 
@@ -159,8 +242,10 @@ async function cargarTodo() {
   llenarFiltros()
   cargarProductos()
   cargarMarcasPanel()
+  cargarPromociones()
 }
 
+// ── FILTROS ───────────────────────────────────────
 function llenarFiltros() {
   const selCat = document.getElementById("filtro-categoria")
   const selMar = document.getElementById("filtro-marca")
@@ -171,24 +256,20 @@ function llenarFiltros() {
   document.getElementById("buscar-producto").addEventListener("input", cargarProductos)
 }
 
+// ── PRODUCTOS ─────────────────────────────────────
 async function cargarProductos() {
   const catId = document.getElementById("filtro-categoria").value
   const marId = document.getElementById("filtro-marca").value
   const busqueda = document.getElementById("buscar-producto").value.toLowerCase().trim()
-
   let query = supabase.from("productos")
     .select("*, marcas(nombre), categorias(nombre)").order("orden")
   if (catId) query = query.eq("categoria_id", catId)
   if (marId) query = query.eq("marca_id", marId)
-
   const { data, error } = await query
   if (error) { console.error(error); return }
-
   const filtrados = busqueda ? data.filter(p => p.nombre.toLowerCase().includes(busqueda)) : data
-
   document.getElementById("contador-productos").textContent =
     `${filtrados.length} producto${filtrados.length !== 1 ? 's' : ''} encontrado${filtrados.length !== 1 ? 's' : ''}`
-
   const lista = document.getElementById("lista-productos")
   lista.innerHTML = ""
   filtrados.forEach((p, index) => {
@@ -211,93 +292,90 @@ async function cargarProductos() {
   })
 }
 
-function mostrarPreview(url) {
-  const img = document.getElementById("preview-imagen")
-  const placeholder = document.getElementById("preview-placeholder")
-  if (url) {
-    img.src = url
-    img.style.display = "block"
-    placeholder.style.display = "none"
-  } else {
-    img.src = ""
-    img.style.display = "none"
-    placeholder.style.display = "flex"
+// ── HELPER IMÁGENES ───────────────────────────────
+function setupImageUpload({ inputId, btnSubirId, btnQuitarId, previewImgId, placeholderId, hiddenId, statusId, carpeta }) {
+  function mostrarPreview(url) {
+    const img = document.getElementById(previewImgId)
+    const ph = document.getElementById(placeholderId)
+    if (url) { img.src = url; img.style.display = "block"; ph.style.display = "none" }
+    else { img.src = ""; img.style.display = "none"; ph.style.display = "flex" }
+    document.getElementById(hiddenId).value = url || ""
   }
-  document.getElementById("prod-imagen").value = url || ""
+  document.getElementById(btnSubirId).addEventListener("click", () => {
+    document.getElementById(inputId).click()
+  })
+  document.getElementById(btnQuitarId).addEventListener("click", () => {
+    document.getElementById(inputId).value = ""
+    document.getElementById(statusId).textContent = ""
+    mostrarPreview("")
+  })
+  document.getElementById(inputId).addEventListener("change", async (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+    const status = document.getElementById(statusId)
+    status.textContent = "⏳ Subiendo imagen..."
+    status.style.color = "#aaa"
+    const ext = file.name.split('.').pop().toLowerCase()
+    const filename = `${carpeta}_${Date.now()}.${ext}`
+    const { error } = await supabase.storage
+      .from("catalogo").upload(`${carpeta}/${filename}`, file, { upsert: true })
+    if (error) {
+      status.textContent = "❌ Error al subir. Intenta de nuevo."
+      status.style.color = "#f44336"
+      console.error(error)
+      return
+    }
+    const { data: urlData } = supabase.storage.from("catalogo").getPublicUrl(`${carpeta}/${filename}`)
+    mostrarPreview(urlData.publicUrl)
+    status.textContent = "✅ Imagen subida correctamente"
+    status.style.color = "#4caf50"
+  })
+  return mostrarPreview
 }
 
-document.getElementById("btn-cambiar-imagen").addEventListener("click", () => {
-  document.getElementById("input-imagen").click()
+const mostrarPreviewProducto = setupImageUpload({
+  inputId: "input-prod-imagen", btnSubirId: "btn-subir-prod-imagen",
+  btnQuitarId: "btn-quitar-prod-imagen", previewImgId: "preview-prod-imagen",
+  placeholderId: "preview-prod-placeholder", hiddenId: "prod-imagen",
+  statusId: "upload-prod-status", carpeta: "productos"
+})
+const mostrarPreviewMarca = setupImageUpload({
+  inputId: "input-marca-logo", btnSubirId: "btn-subir-marca-logo",
+  btnQuitarId: "btn-quitar-marca-logo", previewImgId: "preview-marca-logo",
+  placeholderId: "preview-marca-placeholder", hiddenId: "marca-logo",
+  statusId: "upload-marca-status", carpeta: "marcas"
+})
+const mostrarPreviewPromo = setupImageUpload({
+  inputId: "input-promo-imagen", btnSubirId: "btn-subir-promo-imagen",
+  btnQuitarId: "btn-quitar-promo-imagen", previewImgId: "preview-promo-imagen",
+  placeholderId: "preview-promo-placeholder", hiddenId: "promo-imagen",
+  statusId: "upload-promo-status", carpeta: "promociones"
 })
 
-document.getElementById("btn-quitar-imagen").addEventListener("click", () => {
-  document.getElementById("input-imagen").value = ""
-  document.getElementById("upload-status").textContent = ""
-  mostrarPreview("")
-})
-
-document.getElementById("input-imagen").addEventListener("change", async (e) => {
-  const file = e.target.files[0]
-  if (!file) return
-  const status = document.getElementById("upload-status")
-  status.textContent = "⏳ Subiendo imagen..."
-  status.style.color = "#aaa"
-
-  const ext = file.name.split('.').pop().toLowerCase()
-  const filename = `producto_${Date.now()}.${ext}`
-
-  const { error } = await supabase.storage
-    .from("catalogo")
-    .upload(`productos/${filename}`, file, { upsert: true })
-
-  if (error) {
-    status.textContent = "❌ Error al subir. Intenta de nuevo."
-    status.style.color = "#f44336"
-    console.error(error)
-    return
-  }
-
-  const { data: urlData } = supabase.storage
-    .from("catalogo")
-    .getPublicUrl(`productos/${filename}`)
-
-  mostrarPreview(urlData.publicUrl)
-  status.textContent = "✅ Imagen subida correctamente"
-  status.style.color = "#4caf50"
-})
-
-function abrirModal(titulo, prod = null) {
-  document.getElementById("modal-titulo").textContent = titulo
+// ── MODAL PRODUCTO ────────────────────────────────
+function abrirModalProducto(titulo, prod = null) {
+  document.getElementById("modal-prod-titulo").textContent = titulo
   document.getElementById("prod-id").value = prod?.id || ""
   document.getElementById("prod-nombre").value = prod?.nombre || ""
   document.getElementById("prod-descripcion").value = prod?.descripcion || ""
   document.getElementById("prod-precio").value = prod?.precio || ""
   document.getElementById("prod-activo").checked = prod ? prod.activo : true
-  document.getElementById("modal-error").textContent = ""
-  document.getElementById("upload-status").textContent = ""
-  document.getElementById("input-imagen").value = ""
-  mostrarPreview(prod?.imagen_url || "")
-  llenarSelectsModal(prod?.categoria_id || "", prod?.marca_id || "")
+  document.getElementById("modal-prod-error").textContent = ""
+  document.getElementById("upload-prod-status").textContent = ""
+  document.getElementById("input-prod-imagen").value = ""
+  mostrarPreviewProducto(prod?.imagen_url || "")
+  document.getElementById("prod-categoria").innerHTML = categorias.map(c =>
+    `<option value="${c.id}" ${c.id === prod?.categoria_id ? 'selected' : ''}>${c.nombre}</option>`).join("")
+  document.getElementById("prod-marca").innerHTML = marcas.map(m =>
+    `<option value="${m.id}" ${m.id === prod?.marca_id ? 'selected' : ''}>${m.nombre}</option>`).join("")
   document.getElementById("modal-producto").style.display = "flex"
 }
 
 window.editarProducto = async (id) => {
   const { data: p } = await supabase.from("productos").select("*").eq("id", id).single()
-  abrirModal("Editar Producto", p)
+  abrirModalProducto("Editar Producto", p)
 }
-
-document.getElementById("btn-nuevo-producto").addEventListener("click", () => {
-  abrirModal("Nuevo Producto")
-})
-
-function llenarSelectsModal(catSeleccionada, marcaSeleccionada) {
-  document.getElementById("prod-categoria").innerHTML = categorias.map(c =>
-    `<option value="${c.id}" ${c.id === catSeleccionada ? 'selected' : ''}>${c.nombre}</option>`
-  ).join("")
-  document.getElementById("prod-marca").innerHTML = marcas.map(m =>
-    `<option value="${m.id}" ${m.id === marcaSeleccionada ? 'selected' : ''}>${m.nombre}</option>`
-  ).join("")
-}
+document.getElementById("btn-nuevo-producto").addEventListener("click", () => abrirModalProducto("Nuevo Producto"))
 
 document.getElementById("btn-guardar-producto").addEventListener("click", async () => {
   const id = document.getElementById("prod-id").value
@@ -310,30 +388,15 @@ document.getElementById("btn-guardar-producto").addEventListener("click", async 
     marca_id: document.getElementById("prod-marca").value,
     activo: document.getElementById("prod-activo").checked
   }
-  if (!datos.nombre) {
-    document.getElementById("modal-error").textContent = "El nombre es obligatorio."
-    return
-  }
+  if (!datos.nombre) { document.getElementById("modal-prod-error").textContent = "El nombre es obligatorio."; return }
   const btn = document.getElementById("btn-guardar-producto")
-  btn.textContent = "Guardando..."
-  btn.disabled = true
-
+  btn.textContent = "Guardando..."; btn.disabled = true
   let error
-  if (id) {
-    ({ error } = await supabase.from("productos").update(datos).eq("id", id))
-  } else {
-    ({ error } = await supabase.from("productos").insert(datos))
-  }
-  btn.textContent = "Guardar"
-  btn.disabled = false
-
-  if (error) {
-    document.getElementById("modal-error").textContent = "Error al guardar."
-    console.error(error)
-  } else {
-    document.getElementById("modal-producto").style.display = "none"
-    cargarProductos()
-  }
+  if (id) { ({ error } = await supabase.from("productos").update(datos).eq("id", id)) }
+  else { ({ error } = await supabase.from("productos").insert(datos)) }
+  btn.textContent = "Guardar"; btn.disabled = false
+  if (error) { document.getElementById("modal-prod-error").textContent = "Error al guardar."; console.error(error) }
+  else { document.getElementById("modal-producto").style.display = "none"; cargarProductos() }
 })
 
 window.eliminarProducto = async (id) => {
@@ -341,14 +404,18 @@ window.eliminarProducto = async (id) => {
   await supabase.from("productos").delete().eq("id", id)
   cargarProductos()
 }
-
 document.getElementById("btn-cancelar-producto").addEventListener("click", () => {
   document.getElementById("modal-producto").style.display = "none"
 })
 
+// ── MARCAS ────────────────────────────────────────
 async function cargarMarcasPanel() {
-  const { data, error } = await supabase.from("marcas").select("*").order("nombre")
-  if (error) return
+  const { data, error } = await supabase.from("marcas")
+    .select("*").order("nombre")
+  if (error) { console.error(error); return }
+  marcas = data
+  document.getElementById("contador-marcas").textContent =
+  `${data.length} marca${data.length !== 1 ? 's' : ''} encontrada${data.length !== 1 ? 's' : ''}`
   const lista = document.getElementById("lista-marcas")
   lista.innerHTML = ""
   data.forEach((m, index) => {
@@ -356,21 +423,152 @@ async function cargarMarcasPanel() {
     div.className = "item-admin"
     div.innerHTML = `
       <span class="item-numero">${index + 1}</span>
+      ${m.logo_url
+        ? `<img src="${m.logo_url}" onerror="this.style.display='none'" class="item-thumb">`
+        : '<div class="item-thumb-placeholder">Sin logo</div>'}
       <div class="item-info">
         <strong>${m.nombre}</strong>
+        <span>Orden: ${m.orden || 'S/N'}</span>
         <span class="estado-tag ${m.activo ? 'activo' : 'inactivo'}">${m.activo ? 'Activa' : 'Inactiva'}</span>
       </div>
       <div class="item-acciones">
+        <button onclick="editarMarca('${m.id}')">✏️ Editar</button>
         <button onclick="toggleMarca('${m.id}', ${m.activo})">${m.activo ? '🔴 Desactivar' : '🟢 Activar'}</button>
+        <button onclick="eliminarMarca('${m.id}')" class="btn-eliminar">🗑️ Eliminar</button>
       </div>`
     lista.appendChild(div)
   })
 }
 
+function abrirModalMarca(titulo, m = null) {
+  document.getElementById("modal-marca-titulo").textContent = titulo
+  document.getElementById("marca-id").value = m?.id || ""
+  document.getElementById("marca-nombre").value = m?.nombre || ""
+  document.getElementById("marca-orden").value = m?.orden || ""
+  document.getElementById("marca-activo").checked = m ? m.activo : true
+  document.getElementById("modal-marca-error").textContent = ""
+  document.getElementById("upload-marca-status").textContent = ""
+  document.getElementById("input-marca-logo").value = ""
+  mostrarPreviewMarca(m?.logo_url || "")
+  
+  document.getElementById("modal-marca").style.display = "flex"
+}
+
+window.editarMarca = async (id) => {
+  const { data: m } = await supabase.from("marcas").select("*").eq("id", id).single()
+  abrirModalMarca("Editar Marca", m)
+}
+document.getElementById("btn-nueva-marca").addEventListener("click", () => abrirModalMarca("Nueva Marca"))
+
+document.getElementById("btn-guardar-marca").addEventListener("click", async () => {
+  const id = document.getElementById("marca-id").value
+  const datos = {
+    nombre: document.getElementById("marca-nombre").value.trim().toUpperCase(),
+    logo_url: document.getElementById("marca-logo").value.trim(),
+    
+    orden: parseInt(document.getElementById("marca-orden").value) || 99,
+    activo: document.getElementById("marca-activo").checked
+  }
+  if (!datos.nombre) { document.getElementById("modal-marca-error").textContent = "El nombre es obligatorio."; return }
+  const btn = document.getElementById("btn-guardar-marca")
+  btn.textContent = "Guardando..."; btn.disabled = true
+  let error
+  if (id) { ({ error } = await supabase.from("marcas").update(datos).eq("id", id)) }
+  else { ({ error } = await supabase.from("marcas").insert(datos)) }
+  btn.textContent = "Guardar"; btn.disabled = false
+  if (error) { document.getElementById("modal-marca-error").textContent = "Error al guardar."; console.error(error) }
+  else { document.getElementById("modal-marca").style.display = "none"; cargarMarcasPanel() }
+})
+
 window.toggleMarca = async (id, activo) => {
   await supabase.from("marcas").update({ activo: !activo }).eq("id", id)
   cargarMarcasPanel()
 }
+window.eliminarMarca = async (id) => {
+  if (!confirm("¿Eliminar esta marca?\nLos productos asociados quedarán sin marca.")) return
+  await supabase.from("marcas").delete().eq("id", id)
+  cargarMarcasPanel()
+}
+document.getElementById("btn-cancelar-marca").addEventListener("click", () => {
+  document.getElementById("modal-marca").style.display = "none"
+})
+
+// ── PROMOCIONES ───────────────────────────────────
+async function cargarPromociones() {
+  const { data, error } = await supabase.from("banners").select("*").order("orden")
+  if (error) { console.error(error); return }
+  const lista = document.getElementById("lista-promociones")
+  lista.innerHTML = ""
+  if (!data || data.length === 0) {
+    lista.innerHTML = "<p style='color:#aaa;padding:16px'>No hay promociones. Agrega una con el botón de arriba.</p>"
+    return
+  }
+  data.forEach((p, index) => {
+    const div = document.createElement("div")
+    div.className = "item-admin"
+    div.innerHTML = `
+      <span class="item-numero">${index + 1}</span>
+      ${p.imagen_url
+        ? `<img src="${p.imagen_url}" onerror="this.style.display='none'" class="item-thumb">`
+        : '<div class="item-thumb-placeholder">Sin imagen</div>'}
+      <div class="item-info">
+        <strong>${p.titulo || 'Sin título'}</strong>
+        <span class="estado-tag ${p.activo ? 'activo' : 'inactivo'}">${p.activo ? 'Activa' : 'Inactiva'}</span>
+      </div>
+      <div class="item-acciones">
+        <button onclick="editarPromo('${p.id}')">✏️ Editar</button>
+        <button onclick="eliminarPromo('${p.id}')" class="btn-eliminar">🗑️ Eliminar</button>
+      </div>`
+    lista.appendChild(div)
+  })
+}
+
+function abrirModalPromo(titulo, p = null) {
+  document.getElementById("modal-promo-titulo").textContent = titulo
+  document.getElementById("promo-id").value = p?.id || ""
+  document.getElementById("promo-titulo").value = p?.titulo || ""
+  document.getElementById("promo-activo").checked = p ? p.activo : true
+  document.getElementById("modal-promo-error").textContent = ""
+  document.getElementById("upload-promo-status").textContent = ""
+  document.getElementById("input-promo-imagen").value = ""
+  mostrarPreviewPromo(p?.imagen_url || "")
+  document.getElementById("modal-promo").style.display = "flex"
+}
+
+window.editarPromo = async (id) => {
+  const { data: p } = await supabase.from("banners").select("*").eq("id", id).single()
+  abrirModalPromo("Editar Promoción", p)
+}
+document.getElementById("btn-nueva-promo").addEventListener("click", () => abrirModalPromo("Nueva Promoción"))
+
+document.getElementById("btn-guardar-promo").addEventListener("click", async () => {
+  const id = document.getElementById("promo-id").value
+  const datos = {
+    titulo: document.getElementById("promo-titulo").value.trim(),
+    imagen_url: document.getElementById("promo-imagen").value.trim(),
+    activo: document.getElementById("promo-activo").checked,
+    orden: 1
+  }
+  if (!datos.titulo) { document.getElementById("modal-promo-error").textContent = "El título es obligatorio."; return }
+  const btn = document.getElementById("btn-guardar-promo")
+  btn.textContent = "Guardando..."; btn.disabled = true
+  let error
+  if (id) { ({ error } = await supabase.from("banners").update(datos).eq("id", id)) }
+  else { ({ error } = await supabase.from("banners").insert(datos)) }
+  btn.textContent = "Guardar"; btn.disabled = false
+  if (error) { document.getElementById("modal-promo-error").textContent = "Error al guardar."; console.error(error) }
+  else { document.getElementById("modal-promo").style.display = "none"; cargarPromociones() }
+})
+
+window.eliminarPromo = async (id) => {
+  if (!confirm("¿Eliminar esta promoción?")) return
+  await supabase.from("banners").delete().eq("id", id)
+  cargarPromociones()
+}
+document.getElementById("btn-cancelar-promo").addEventListener("click", () => {
+  document.getElementById("modal-promo").style.display = "none"
+})
+
 </script>
 </body>
 </html>

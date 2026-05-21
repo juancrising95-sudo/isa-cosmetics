@@ -21,6 +21,13 @@
 <div class="sparkles"></div>
 
 <!-- ⭐ LATERALES DECORATIVOS ⭐ -->
+
+<div class="decoracion-lateral derecha">
+    <div class="promo-box">
+        <h3>🎁 EN MAYO:</h3>
+        <p>Celebramos la valentía de las madres y la dignidad del trabajo.</p>
+    </div>
+
 <div class="decoracion-lateral izquierda">
     <div class="promo-box">
         <h3>CATÁLOGO, MAYO 2026</h3>
@@ -32,15 +39,9 @@
     </div>
 </div>
 
-<div class="decoracion-lateral derecha">
-    <div class="promo-box">
-        <h3>🎁 EN MAYO:</h3>
-        <p>Celebramos la valentía de las madres y la dignidad del trabajo.</p>
-    </div>
-
-    <a href="promociones.html" class="promo-box promo-destacada">
-    <h3>💖 PROMOCION POR EL DIA DE LA MADRE, MAYO 2026</h3>
-    
+    <a href="promociones.html" class="promo-box promo-destacada" id="promo-dinamica">
+    <h3 id="promo-titulo-index">PROMOCIÓN DEL MES</h3>
+    <p>Toca para ver</p>
 </a>
 </div>
 
@@ -77,8 +78,8 @@
 <script src="install-app.js"></script>
 
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-<script src="supabase.js"></script>
-<script src="productos.js"></script>
+<script type="module" src="supabase.js"></script>
+
 <!-- <script src="promo-popup.js"></script> -->
 
 <script>
@@ -101,5 +102,33 @@ window.addEventListener("load", function(){
 });
 </script>
 
+<script type="module">
+
+import { supabase } from "./supabase.js"
+
+async function cargarPromoIndex(){
+
+    const { data, error } = await supabase
+        .from("banners")
+        .select("*")
+        .eq("activo", true)
+        .order("orden", { ascending:true })
+        .limit(1)
+        .single()
+
+    if(error || !data){
+        console.error(error)
+        return
+    }
+
+    const titulo = document.getElementById("promo-titulo-index")
+
+    titulo.textContent = data.titulo || "PROMOCIÓN ESPECIAL"
+
+}
+
+cargarPromoIndex()
+
+</script>
 </body>
 </html>

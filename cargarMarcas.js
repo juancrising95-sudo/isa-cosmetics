@@ -36,11 +36,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   const idsVistos = new Set()
 
   productosData.forEach(item => {
-    if (item.marcas && !idsVistos.has(item.marcas.id)) {
-      idsVistos.add(item.marcas.id)
-      marcasUnicas.push(item.marcas)
-    }
-  })
+
+  const marca = Array.isArray(item.marcas)
+    ? item.marcas[0]
+    : item.marcas
+
+  if (marca && !idsVistos.has(marca.id)) {
+    idsVistos.add(marca.id)
+    marcasUnicas.push(marca)
+  }
+
+})
 
   // PASO 4: ordenar y mostrar
   marcasUnicas.sort((a, b) => (a.orden ?? 99) - (b.orden ?? 99))
@@ -48,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   contenedor.innerHTML = ""
 
   marcasUnicas.forEach(marca => {
-    console.log("ID de marca:", marca.id, "| Nombre:", marca.nombre) // ← AGREGA ESTA LÍNEA
+    
 
     const link = document.createElement("a")
     link.href = `productos?marca=${marca.id}&categoria=${categoria.id}`

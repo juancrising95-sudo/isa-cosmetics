@@ -1,8 +1,8 @@
 import { supabase } from "./supabase.js"
 
 const params = new URLSearchParams(window.location.search)
-const marcaId = params.get("marca")?.trim()
-const categoriaId = params.get("categoria")?.trim()   // ← LÍNEA NUEVA
+const marcaId = params.get("marca")
+const categoriaId = params.get("categoria")
 const contenedor = document.querySelector(".grid-productos")
 const tituloMarca = document.querySelector(".titulo-marca")
 
@@ -27,7 +27,7 @@ async function cargarProductos() {
     .trim()
     .replace(/\s+/g, "-")
     .replace(/[^a-z0-9-]/g, "")
-  document.body.className = clasesMarca
+  document.body.classList.add(clasesMarca)
 
   if (marca.logo_url) {
     const logoDiv = document.createElement("div")

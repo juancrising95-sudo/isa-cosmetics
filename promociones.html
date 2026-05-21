@@ -34,7 +34,7 @@ body{
 
 /* IMAGEN PROMO - CORREGIDA PARA CELULAR */
 .promo-img{
-  display: block;
+  display: none;
   width: 100%;         /* Ocupa el 100% del ancho del contenedor */
   height: auto;        /* Mantiene la proporción real */
   max-width: 100%;
@@ -156,7 +156,7 @@ body{
 
 <div class="container">
 
-  <img src="assets/promo-madre.jpg" class="promo-img" alt="Promoción Día de la Madre">
+  <img id="promo-img" class="promo-img" style="display:none">
 
   <div class="promo-urgencia">
     <div class="urgencia-texto">
@@ -171,6 +171,37 @@ body{
   <a href="index.html" class="btn-back">← Volver al catálogo</a>
 
 </div>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script type="module" src="supabase.js"></script>
 
+<script type="module">
+
+import { supabase } from "./supabase.js"
+
+async function cargarPromo() {
+
+  const { data, error } = await supabase
+    .from("banners")
+    .select("*")
+    .eq("activo", true)
+    .order("orden", { ascending: true })
+    .limit(1)
+    .single()
+
+  if(error || !data){
+    console.error(error)
+    return
+  }
+
+  const img = document.getElementById("promo-img")
+
+  img.src = data.imagen_url
+  img.style.display = "block"
+
+}
+
+cargarPromo()
+
+</script>
 </body>
 </html>

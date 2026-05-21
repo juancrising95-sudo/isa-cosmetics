@@ -1,0 +1,220 @@
+Listado de rutas de carpetas
+El número de serie del volumen es 3CA2-F059
+C:.
+|   admin.css
+|   admin.html
+|   capilar.html
+|   cargarMarcas.js
+|   cargarProductos.js
+|   corporal.html
+|   facial.html
+|   icon-192.png
+|   index.html
+|   install-app.js
+|   isa.cosmetics.png
+|   manifest.json
+|   mapa_ia.txt
+|   mapa_resumido.txt
+|   maquillaje.html
+|   perfumes.html
+|   productos.html
+|   productos.js
+|   promociones.html
+|   proteccion.html
+|   script-wsp.js
+|   script.js
+|   sparkles.js
+|   style.css
+|   supabase.js
+|   
++---assets
+|   |   categorías.png
+|   |   información.png
+|   |   portada.png
+|   |   promo-madre.jpg
+|   |   
+|   +---fondos-categoria
+|   |       capilar.jpg
+|   |       corporal.jpg
+|   |       facial.jpg
+|   |       maquillajes.jpg
+|   |       perfumes.jpg
+|   |       solar.jpg
+|   |       
+|   +---logos
+|   |       cerave.png
+|   |       dove.png
+|   |       eucerin.png
+|   |       isdin.png
+|   |       laca.png
+|   |       laroche.png
+|   |       loreal.png
+|   |       natura.png
+|   |       neutrogena.png
+|   |       nivea.png
+|   |       ordene.png
+|   |       umbrella.png
+|   |       victoria.png
+|   |       
+|   \---productos
+|       +---capilar
+|       +---corporal
+|       |   +---cerave
+|       |   |       crema-alisadora-anti-rugosidades.jpg
+|       |   |       
+|       |   +---dove
+|       |   |       serum-corporal-niacinamida-tono-uniforme.jpg
+|       |   |       
+|       |   +---eucerin
+|       |   |       anti-pigment-crema-corporal-para-areas-especificas.jpg
+|       |   |       dermopure-oil-control-gel-limpiador-concentrado.jpg
+|       |   |       eucerin-ph5-advanced-repair-crema-enriquecida-con-ceramidas.jpg
+|       |   |       
+|       |   +---isdin
+|       |   +---laca
+|       |   |       2Emulsión Hidratante Fresca (Línea Sensorial).jpg
+|       |   |       3Emulsión Hidratante Enigmática (Línea Sensorial.jpg
+|       |   |       4Emulsión Hidratante Salvaje (Línea Sensorial.jpg
+|       |   |       5Emulsión Hidratante Ilusión (Línea Sensorial).jpg
+|       |   |       6Emulsión Hidratante Enigmática (Línea Sensorial).jpg
+|       |   |       7Emulsión Hidratante Fresca (Línea Sensorial).jpg
+|       |   |       8Emulsión Hidratante Ilusión (Línea Sensorial).jpg
+|       |   |       9Emulsión Hidratante Salvaje (Línea Sensorial).jpg
+|       |   |       crema.jpg
+|       |   |       emulsion-hidratante-enigmatica.jpg
+|       |   |       emulsion-hidratante-fresca.jpg
+|       |   |       emulsion-hidratante-ilusion .jpg
+|       |   |       emulsion-hidratante-salvaje .jpg
+|       |   |       
+|       |   +---natura
+|       |   |       crema-nocturna-para-el-cuerpo.jpg
+|       |   |       natura-tododia.jpg
+|       |   |       
+|       |   \---ordene
+|       |           crema-de-regeneracion-intensiva.jpg
+|       |           
+|       +---facial
+|       |   +---cerave
+|       |   |       1Limpiadora Hidratante (Hydrating Cleanser).jpg
+|       |   |       3Gel Limpiador Espumoso (Foaming Cleanser).jpg
+|       |   |       4SA Limpiador Anti-rugosidades (Smoothing Cleanser).jpg
+|       |   |       gel-limpiador-espumoso.jpg
+|       |   |       limpiador-control-imperfecciones.jpg
+|       |   |       limpiadora-hidratante.jpg
+|       |   |       sa-limpiador-anti.rugosidades.jpg
+|       |   |       
+|       |   +---eucerin
+|       |   |       1Anti-Pigment Gel Limpiador.jpg
+|       |   |       2DermoPure Oil Control Gel Limpiador Facial.jpg
+|       |   |       3DermoPure Oil Control Gel Limpiador Facial.jpg
+|       |   |       4Anti-Pigment Crema Facial de Día FPS 30.jpg
+|       |   |       5Anti-Pigment Dual Serum Facial.jpg
+|       |   |       anti-pigment-crema-facial-dia-fps30.jpg
+|       |   |       anti-pigment-dual-serum-facial.jpg
+|       |   |       anti-pigment-gel-limpiador.jpg
+|       |   |       dermopure-gel-limpieza.jpg
+|       |   |       dermopure-oil-control-gel-facial.jpg
+|       |   |       
+|       |   +---laca
+|       |   |       ablandador-enzimatico.jpg
+|       |   |       colageno-concentrado-liquido.jpg
+|       |   |       crema-humectante-protectora.jpg
+|       |   |       emulsion-aqua-pore.jpg
+|       |   |       emulsion-aquapore.jpg
+|       |   |       gel-humectante-herbal.jpg
+|       |   |       hialuron-concentrado-liquido.jpg
+|       |   |       locion-astringente-nicotinamida.jpg
+|       |   |       locion-secante.jpg
+|       |   |       locion-te-verde-flavonoides.jpg
+|       |   |       mascara-descongestiva.jpg
+|       |   |       mascara-destello-vital-oligoelementos.jpg
+|       |   |       mascara-ilumi-c.jpg
+|       |   |       mascara-secativa-reguladora.jpg
+|       |   |       mascara-shock-retinol-coenzimaq.jpg
+|       |   |       mascara-suavizante-elastina.jpg
+|       |   |       monodosis-d-descongestivas.jpg
+|       |   |       monodosis-vitaminac.jpg
+|       |   |       neodermis-ampollas-humectantes.jpg
+|       |   |       peeling-bio-enzimatico.jpg
+|       |   |       serum-con-dmae.jpg
+|       |   |       serum-ionizable-vc.jpg
+|       |   |       
+|       |   +---loreal
+|       |   |       revitalift-acido-hialuronico.jpg
+|       |   |       revitalift-laser-retinol.jpg
+|       |   |       serum-rellenador-de-ojos-con-acido-hialuronico.jpg
+|       |   |       
+|       |   \---nivea
+|       |           luminous-630-anti-manchas.jpg
+|       |           luminous-skinglow.jpg
+|       |           
+|       +---maquillaje
+|       +---perfumes
+|       |   \---victoria
+|       |           pure-seduction-fragance-mist.jpg
+|       |           rush-fragance-mist.jpg
+|       |           velvet-petals.jpg
+|       |           
+|       \---proteccion
+|           +---eucerin
+|           |       sun-fluid-pigment.jpg
+|           |       sun-gel-control-fps-50.jpg
+|           |       sun-gel-crea-pigment-control-tinted.jpg
+|           |       sun-gel-cream-oil-tono-medio.jpg
+|           |       
+|           +---isdin
+|           |       foto-ultra-100-active-sin-color-fluido.jpg
+|           |       fotoultra-100-active-unify.jpg
+|           |       fotoultra-unif-color.jpg
+|           |       fusion-magic-medium.jpg
+|           |       fusion-water-magic.jpg
+|           |       fusion-water-sin-color-transparente.jpg
+|           |       
+|           +---la roche posay
+|           |       la-roche.jpg
+|           |       
+|           +---laca
+|           |       laca-emulsion-protectora-fps60.jpg
+|           |       laca-emulsion-protectora.jpg
+|           |       laca-fps-60-ultra-fluido.jpg
+|           |       
+|           +---natura
+|           |       natura-solar.jpg
+|           |       
+|           \---umbrella
+|                   crema-spf50.jpg
+|                   gel-spf50.jpg
+|                   perfect-skin-claro.jpg
+|                   perfect-skin-oscuro.jpg
+|                   spf100.jpg
+|                   urban-protect-spf50.jpg
+|                   
+\---marcas
+    +---capilar
+    +---corporal
+    |       cerave.html
+    |       dove.html
+    |       eucerin.html
+    |       laca.html
+    |       natura.html
+    |       ordene.html
+    |       
+    +---facial
+    |       cerave.html
+    |       eucerin.html
+    |       laca.html
+    |       loreal.html
+    |       nivea.html
+    |       
+    +---maquillaje
+    +---perfumes
+    |       victoria.html
+    |       
+    \---proteccion
+            eucerin.html
+            isdin.html
+            laca.html
+            laroche.html
+            natura.html
+            umbrella.html
+            

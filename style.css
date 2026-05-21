@@ -753,28 +753,87 @@ body.pagina-categoria::before{
 }
 
 
+/* ===================================== */
+/* PROMOCION DESTACADA DINAMICA */
+/* ===================================== */
+
 .promo-destacada{
-    display: block;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-    background: linear-gradient(135deg, #ff2d55, #ffcc00, #ff6ec7);
-    background-size: 300% 300%;
-    animation: gradientMove 6s ease infinite;
+    text-decoration:none;
 
-    color: white;
-    box-shadow: 0 0 15px rgba(255, 45, 85, 0.5);
-    transform: scale(1);
-    transition: all 0.3s ease;
+    padding:10px;
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#ff2d55,#ffcc00,#ff6ec7);
+    background-size:300% 300%;
+    animation:gradientMove 6s ease infinite;
+
+    color:white;
+
+    box-shadow:0 0 18px rgba(255,45,85,.45);
+
+    transition:.3s ease;
+
+    overflow:hidden;
 }
 
-.promo-destacada h3{
-    margin: 0;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    color: #fffaf0; /* blanco crema */
+/* Imagen promo */
+#promo-banner-index{
+    width:100%;
+    max-width:120px;
+
+    border-radius:12px;
+
+    margin-bottom:8px;
+
+    object-fit:cover;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.18);
+}
+
+/* Titulo promo */
+#promo-titulo-index{
+    margin:0;
+
+    font-size:13px;
+    line-height:1.25;
+
+    text-align:center;
+
+    color:#fffef8;
+
+    font-weight:700;
+}
+
+/* Hover escritorio */
+.promo-destacada:hover{
+    transform:translateY(-3px) scale(1.02);
+}
+
+/* ===================================== */
+/* MOVIL */
+/* ===================================== */
+
+@media (max-width:1199px){
+
+    .promo-destacada{
+        width:45%;
+        min-height:120px;
+        padding:8px;
+    }
+
+    #promo-banner-index{
+        max-width:90px;
+    }
+
+    #promo-titulo-index{
+        font-size:11px;
+    }
+
 }
 
 .promo-destacada p{
