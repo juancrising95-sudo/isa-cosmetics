@@ -1,11 +1,19 @@
 {
   "name": "ISA Cosmetics Admin",
   "short_name": "ISA Admin",
-  "start_url": "admin.html",
+
+  "id": "/admin.html",
+  "scope": "/admin.html",
+
+  "start_url": "/admin.html",
+
   "display": "standalone",
+
   "background_color": "#000000",
   "theme_color": "#000000",
+
   "orientation": "portrait",
+
   "icons": [
     {
       "src": "admin-icon-192.png",
