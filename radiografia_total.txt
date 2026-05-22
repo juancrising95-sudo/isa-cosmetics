@@ -1,0 +1,713 @@
+RADIOGRAFIA TOTAL DEL PROYECTO - ISA COSMETICS
+==========================================================================================
+FECHA: 2026-05-21 22:33:00.419110
+RUTA: C:\AURENSTAR_CORP\CLIENTES-P01(CATALOGOS DIGITALES-P01)\CLIENTE01-ISACOSMETICS-CATALOGO DIGITAL(P01)
+
+ESTRUCTURA DE CARPETAS:
+[CARPETA] .
+    - admin.css
+    - admin.html
+    - capilar.html
+    - cargarMarcas.js
+    - cargarProductos.js
+    - corporal.html
+    - facial.html
+    - icon-192.png
+    - index.html
+    - install-app.js
+    - isa.cosmetics.png
+    - manifest.json
+    - maquillaje.html
+    - perfumes.html
+    - productos.html
+    - productos.js
+    - promociones.html
+    - proteccion.html
+    - script-wsp.js
+    - script.js
+    - sparkles.js
+    - style.css
+    - supabase.js
+    [CARPETA] .git
+        [CARPETA] hooks
+        [CARPETA] info
+        [CARPETA] logs
+            [CARPETA] refs
+                [CARPETA] heads
+                [CARPETA] remotes
+                    [CARPETA] origin
+        [CARPETA] objects
+            [CARPETA] 01
+            [CARPETA] 02
+            [CARPETA] 03
+            [CARPETA] 04
+            [CARPETA] 05
+            [CARPETA] 06
+            [CARPETA] 07
+            [CARPETA] 08
+            [CARPETA] 09
+            [CARPETA] 0a
+            [CARPETA] 0b
+            [CARPETA] 0c
+            [CARPETA] 0d
+            [CARPETA] 0e
+            [CARPETA] 0f
+            [CARPETA] 10
+            [CARPETA] 11
+            [CARPETA] 12
+            [CARPETA] 13
+            [CARPETA] 14
+            [CARPETA] 15
+            [CARPETA] 17
+            [CARPETA] 1a
+            [CARPETA] 1b
+            [CARPETA] 1c
+            [CARPETA] 1d
+            [CARPETA] 1e
+            [CARPETA] 1f
+            [CARPETA] 20
+            [CARPETA] 21
+            [CARPETA] 22
+            [CARPETA] 23
+            [CARPETA] 24
+            [CARPETA] 25
+            [CARPETA] 26
+            [CARPETA] 27
+            [CARPETA] 28
+            [CARPETA] 29
+            [CARPETA] 2a
+            [CARPETA] 2b
+            [CARPETA] 2c
+            [CARPETA] 2d
+            [CARPETA] 2e
+            [CARPETA] 2f
+            [CARPETA] 30
+            [CARPETA] 31
+            [CARPETA] 32
+            [CARPETA] 33
+            [CARPETA] 34
+            [CARPETA] 35
+            [CARPETA] 36
+            [CARPETA] 37
+            [CARPETA] 38
+            [CARPETA] 39
+            [CARPETA] 3b
+            [CARPETA] 3c
+            [CARPETA] 3d
+            [CARPETA] 3e
+            [CARPETA] 3f
+            [CARPETA] 41
+            [CARPETA] 42
+            [CARPETA] 44
+            [CARPETA] 45
+            [CARPETA] 46
+            [CARPETA] 47
+            [CARPETA] 48
+            [CARPETA] 4a
+            [CARPETA] 4b
+            [CARPETA] 4c
+            [CARPETA] 4d
+            [CARPETA] 4e
+            [CARPETA] 4f
+            [CARPETA] 50
+            [CARPETA] 51
+            [CARPETA] 52
+            [CARPETA] 53
+            [CARPETA] 54
+            [CARPETA] 55
+            [CARPETA] 56
+            [CARPETA] 57
+            [CARPETA] 58
+            [CARPETA] 59
+            [CARPETA] 5b
+            [CARPETA] 5c
+            [CARPETA] 5d
+            [CARPETA] 5e
+            [CARPETA] 5f
+            [CARPETA] 60
+            [CARPETA] 61
+            [CARPETA] 62
+            [CARPETA] 63
+            [CARPETA] 64
+            [CARPETA] 65
+            [CARPETA] 66
+            [CARPETA] 67
+            [CARPETA] 68
+            [CARPETA] 69
+            [CARPETA] 6a
+            [CARPETA] 6c
+            [CARPETA] 6d
+            [CARPETA] 6f
+            [CARPETA] 70
+            [CARPETA] 71
+            [CARPETA] 72
+            [CARPETA] 73
+            [CARPETA] 74
+            [CARPETA] 76
+            [CARPETA] 77
+            [CARPETA] 78
+            [CARPETA] 79
+            [CARPETA] 7a
+            [CARPETA] 7b
+            [CARPETA] 7c
+            [CARPETA] 7d
+            [CARPETA] 7e
+            [CARPETA] 7f
+            [CARPETA] 80
+            [CARPETA] 81
+            [CARPETA] 82
+            [CARPETA] 83
+            [CARPETA] 85
+            [CARPETA] 86
+            [CARPETA] 87
+            [CARPETA] 88
+            [CARPETA] 89
+            [CARPETA] 8a
+            [CARPETA] 8b
+            [CARPETA] 8c
+            [CARPETA] 8d
+            [CARPETA] 8e
+            [CARPETA] 8f
+            [CARPETA] 91
+            [CARPETA] 92
+            [CARPETA] 94
+            [CARPETA] 95
+            [CARPETA] 96
+            [CARPETA] 97
+            [CARPETA] 98
+            [CARPETA] 99
+            [CARPETA] 9a
+            [CARPETA] 9b
+            [CARPETA] 9c
+            [CARPETA] 9d
+            [CARPETA] 9e
+            [CARPETA] 9f
+            [CARPETA] a0
+            [CARPETA] a1
+            [CARPETA] a2
+            [CARPETA] a4
+            [CARPETA] a5
+            [CARPETA] a6
+            [CARPETA] a7
+            [CARPETA] a9
+            [CARPETA] aa
+            [CARPETA] ac
+            [CARPETA] ad
+            [CARPETA] ae
+            [CARPETA] af
+            [CARPETA] b0
+            [CARPETA] b1
+            [CARPETA] b2
+            [CARPETA] b3
+            [CARPETA] b4
+            [CARPETA] b5
+            [CARPETA] b6
+            [CARPETA] b7
+            [CARPETA] b8
+            [CARPETA] b9
+            [CARPETA] ba
+            [CARPETA] bb
+            [CARPETA] bc
+            [CARPETA] bd
+            [CARPETA] be
+            [CARPETA] bf
+            [CARPETA] c1
+            [CARPETA] c2
+            [CARPETA] c3
+            [CARPETA] c4
+            [CARPETA] c5
+            [CARPETA] c9
+            [CARPETA] ca
+            [CARPETA] cb
+            [CARPETA] cc
+            [CARPETA] cd
+            [CARPETA] ce
+            [CARPETA] cf
+            [CARPETA] d0
+            [CARPETA] d1
+            [CARPETA] d2
+            [CARPETA] d3
+            [CARPETA] d4
+            [CARPETA] d6
+            [CARPETA] d7
+            [CARPETA] d8
+            [CARPETA] d9
+            [CARPETA] da
+            [CARPETA] db
+            [CARPETA] dc
+            [CARPETA] dd
+            [CARPETA] de
+            [CARPETA] df
+            [CARPETA] e0
+            [CARPETA] e1
+            [CARPETA] e2
+            [CARPETA] e3
+            [CARPETA] e4
+            [CARPETA] e5
+            [CARPETA] e6
+            [CARPETA] e7
+            [CARPETA] e8
+            [CARPETA] e9
+            [CARPETA] ea
+            [CARPETA] eb
+            [CARPETA] ec
+            [CARPETA] ed
+            [CARPETA] ee
+            [CARPETA] ef
+            [CARPETA] f0
+            [CARPETA] f1
+            [CARPETA] f2
+            [CARPETA] f3
+            [CARPETA] f4
+            [CARPETA] f5
+            [CARPETA] f6
+            [CARPETA] f7
+            [CARPETA] f8
+            [CARPETA] f9
+            [CARPETA] fa
+            [CARPETA] fb
+            [CARPETA] fc
+            [CARPETA] fd
+            [CARPETA] fe
+            [CARPETA] ff
+            [CARPETA] info
+            [CARPETA] pack
+        [CARPETA] refs
+            [CARPETA] heads
+            [CARPETA] remotes
+                [CARPETA] origin
+            [CARPETA] tags
+    [CARPETA] assets
+        - categorías.png
+        - información.png
+        - portada.png
+        - promo-madre.jpg
+        [CARPETA] fondos-categoria
+            - capilar.jpg
+            - corporal.jpg
+            - facial.jpg
+            - maquillajes.jpg
+            - perfumes.jpg
+            - solar.jpg
+        [CARPETA] logos
+            - cerave.png
+            - dove.png
+            - eucerin.png
+            - garnier.png
+            - isdin.png
+            - laca.png
+            - laroche.png
+            - loreal.png
+            - natura.png
+            - neutrogena.png
+            - nivea.png
+            - ordene.png
+            - umbrella.png
+            - victoria.png
+        [CARPETA] productos
+            [CARPETA] capilar
+            [CARPETA] corporal
+                [CARPETA] cerave
+                    - crema-alisadora-anti-rugosidades.jpg
+                [CARPETA] dove
+                    - serum-corporal-niacinamida-tono-uniforme.jpg
+                [CARPETA] eucerin
+                    - anti-pigment-crema-corporal-para-areas-especificas.jpg
+                    - dermopure-oil-control-gel-limpiador-concentrado.jpg
+                    - eucerin-ph5-advanced-repair-crema-enriquecida-con-ceramidas.jpg
+                [CARPETA] isdin
+                [CARPETA] laca
+                    - 2Emulsión Hidratante Fresca (Línea Sensorial).jpg
+                    - 3Emulsión Hidratante Enigmática (Línea Sensorial.jpg
+                    - 4Emulsión Hidratante Salvaje (Línea Sensorial.jpg
+                    - 5Emulsión Hidratante Ilusión (Línea Sensorial).jpg
+                    - 6Emulsión Hidratante Enigmática (Línea Sensorial).jpg
+                    - 7Emulsión Hidratante Fresca (Línea Sensorial).jpg
+                    - 8Emulsión Hidratante Ilusión (Línea Sensorial).jpg
+                    - 9Emulsión Hidratante Salvaje (Línea Sensorial).jpg
+                    - crema.jpg
+                    - emulsion-hidratante-enigmatica.jpg
+                    - emulsion-hidratante-fresca.jpg
+                    - emulsion-hidratante-ilusion .jpg
+                    - emulsion-hidratante-salvaje .jpg
+                [CARPETA] natura
+                    - crema-nocturna-para-el-cuerpo.jpg
+                    - natura-tododia.jpg
+                [CARPETA] ordene
+                    - crema-de-regeneracion-intensiva.jpg
+            [CARPETA] facial
+                [CARPETA] cerave
+                    - 1Limpiadora Hidratante (Hydrating Cleanser).jpg
+                    - 3Gel Limpiador Espumoso (Foaming Cleanser).jpg
+                    - 4SA Limpiador Anti-rugosidades (Smoothing Cleanser).jpg
+                    - gel-limpiador-espumoso.jpg
+                    - limpiador-control-imperfecciones.jpg
+                    - limpiadora-hidratante.jpg
+                    - sa-limpiador-anti.rugosidades.jpg
+                [CARPETA] eucerin
+                    - 1Anti-Pigment Gel Limpiador.jpg
+                    - 2DermoPure Oil Control Gel Limpiador Facial.jpg
+                    - 3DermoPure Oil Control Gel Limpiador Facial.jpg
+                    - 4Anti-Pigment Crema Facial de Día FPS 30.jpg
+                    - 5Anti-Pigment Dual Serum Facial.jpg
+                    - anti-pigment-crema-facial-dia-fps30.jpg
+                    - anti-pigment-dual-serum-facial.jpg
+                    - anti-pigment-gel-limpiador.jpg
+                    - dermopure-gel-limpieza.jpg
+                    - dermopure-oil-control-gel-facial.jpg
+                [CARPETA] laca
+                    - ablandador-enzimatico.jpg
+                    - colageno-concentrado-liquido.jpg
+                    - crema-humectante-protectora.jpg
+                    - emulsion-aqua-pore.jpg
+                    - emulsion-aquapore.jpg
+                    - gel-humectante-herbal.jpg
+                    - hialuron-concentrado-liquido.jpg
+                    - locion-astringente-nicotinamida.jpg
+                    - locion-secante.jpg
+                    - locion-te-verde-flavonoides.jpg
+                    - mascara-descongestiva.jpg
+                    - mascara-destello-vital-oligoelementos.jpg
+                    - mascara-ilumi-c.jpg
+                    - mascara-secativa-reguladora.jpg
+                    - mascara-shock-retinol-coenzimaq.jpg
+                    - mascara-suavizante-elastina.jpg
+                    - monodosis-d-descongestivas.jpg
+                    - monodosis-vitaminac.jpg
+                    - neodermis-ampollas-humectantes.jpg
+                    - peeling-bio-enzimatico.jpg
+                    - serum-con-dmae.jpg
+                    - serum-ionizable-vc.jpg
+                [CARPETA] loreal
+                    - revitalift-acido-hialuronico.jpg
+                    - revitalift-laser-retinol.jpg
+                    - serum-rellenador-de-ojos-con-acido-hialuronico.jpg
+                [CARPETA] nivea
+                    - luminous-630-anti-manchas.jpg
+                    - luminous-skinglow.jpg
+            [CARPETA] maquillaje
+            [CARPETA] perfumes
+                [CARPETA] victoria
+                    - pure-seduction-fragance-mist.jpg
+                    - rush-fragance-mist.jpg
+                    - velvet-petals.jpg
+            [CARPETA] proteccion
+                [CARPETA] eucerin
+                    - sun-fluid-pigment.jpg
+                    - sun-gel-control-fps-50.jpg
+                    - sun-gel-crea-pigment-control-tinted.jpg
+                    - sun-gel-cream-oil-tono-medio.jpg
+                [CARPETA] isdin
+                    - foto-ultra-100-active-sin-color-fluido.jpg
+                    - fotoultra-100-active-unify.jpg
+                    - fotoultra-unif-color.jpg
+                    - fusion-magic-medium.jpg
+                    - fusion-water-magic.jpg
+                    - fusion-water-sin-color-transparente.jpg
+                [CARPETA] la roche posay
+                    - la-roche.jpg
+                [CARPETA] laca
+                    - laca-emulsion-protectora-fps60.jpg
+                    - laca-emulsion-protectora.jpg
+                    - laca-fps-60-ultra-fluido.jpg
+                [CARPETA] natura
+                    - natura-solar.jpg
+                [CARPETA] umbrella
+                    - crema-spf50.jpg
+                    - gel-spf50.jpg
+                    - perfect-skin-claro.jpg
+                    - perfect-skin-oscuro.jpg
+                    - spf100.jpg
+                    - urban-protect-spf50.jpg
+    [CARPETA] marcas_viejo
+        [CARPETA] capilar
+        [CARPETA] corporal
+            - cerave.html
+            - dove.html
+            - eucerin.html
+            - laca.html
+            - natura.html
+            - ordene.html
+        [CARPETA] facial
+            - cerave.html
+            - eucerin.html
+            - laca.html
+            - loreal.html
+            - nivea.html
+        [CARPETA] maquillaje
+        [CARPETA] perfumes
+            - victoria.html
+        [CARPETA] proteccion
+            - eucerin.html
+            - isdin.html
+            - laca.html
+            - laroche.html
+            - natura.html
+            - umbrella.html
+
+==========================================================================================
+ANALISIS DETALLADO DE ARCHIVOS HTML, JS y CSS:
+
+================================================================================
+ARCHIVO: admin.css
+================================================================================
+ARCHIVO CSS - ESTILOS
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: admin.html
+================================================================================
+TITULO: Admin - ISA Cosmetics
+USA SUPABASE: SI
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: capilar.html
+================================================================================
+TITULO: Categoría Capilar
+SCRIPTS: ['./cargarMarcas.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: cargarMarcas.js
+================================================================================
+CONECTA CON SUPABASE: SI
+CONSULTAS A TABLAS: ['categorias', 'productos', 'marca_id']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: cargarProductos.js
+================================================================================
+CONECTA CON SUPABASE: SI
+FUNCIONES: ['cargarProductos']
+CONSULTAS A TABLAS: ['productos']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: corporal.html
+================================================================================
+TITULO: Categoría Corporal
+SCRIPTS: ['./cargarMarcas.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: facial.html
+================================================================================
+TITULO: Categoría Facial
+SCRIPTS: ['./cargarMarcas.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: index.html
+================================================================================
+TITULO: ISA COSMETICS
+SCRIPTS: ['sparkles.js', 'install-app.js', 'https://unpkg.com/@supabase/supabase-js@2', 'supabase.js', 'promo-popup.js']
+USA SUPABASE: SI
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: install-app.js
+================================================================================
+FUNCIONES: ['appYaInstalada', 'mostrarBannerInstalacion', 'instalarApp', 'cerrarBanner']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: maquillaje.html
+================================================================================
+TITULO: Categoría Maquillaje
+SCRIPTS: ['./cargarMarcas.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: perfumes.html
+================================================================================
+TITULO: Categoría Perfumes
+SCRIPTS: ['./cargarMarcas.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: productos.html
+================================================================================
+TITULO: Productos
+SCRIPTS: ['./productos.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: productos.js
+================================================================================
+CONECTA CON SUPABASE: SI
+FUNCIONES: ['cargarProductos']
+CONSULTAS A TABLAS: ['marcas', 'nombre', 'productos']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: promociones.html
+================================================================================
+TITULO: Promoción Día de la Madre
+SCRIPTS: ['https://unpkg.com/@supabase/supabase-js@2', 'supabase.js']
+USA SUPABASE: SI
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: proteccion.html
+================================================================================
+TITULO: Categoría Protección Solar
+SCRIPTS: ['./cargarMarcas.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: script-wsp.js
+================================================================================
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: script.js
+================================================================================
+FUNCIONES: ['volverCatalogo']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: sparkles.js
+================================================================================
+FUNCIONES: ['createSparkle']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: style.css
+================================================================================
+ARCHIVO CSS - ESTILOS
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: supabase.js
+================================================================================
+CONECTA CON SUPABASE: SI
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\corporal\cerave.html
+================================================================================
+TITULO: CERAVE corporal
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\corporal\dove.html
+================================================================================
+TITULO: DOVE corporal
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\corporal\eucerin.html
+================================================================================
+TITULO: EUCERIN corporal
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\corporal\laca.html
+================================================================================
+TITULO: LACA corporal
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\corporal\natura.html
+================================================================================
+TITULO: NATURA corporal
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\corporal\ordene.html
+================================================================================
+TITULO: ORDEÑE EVO corporal
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\facial\cerave.html
+================================================================================
+TITULO: CERAVE facial
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\facial\eucerin.html
+================================================================================
+TITULO: EUCERIN facial
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\facial\laca.html
+================================================================================
+TITULO: LACA facial
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\facial\loreal.html
+================================================================================
+TITULO: LOREAL facial
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\facial\nivea.html
+================================================================================
+TITULO: NIVEA facial
+SCRIPTS: ['../../productos.js', '../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\perfumes\victoria.html
+================================================================================
+TITULO: Victoria's Secret perfume
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\proteccion\eucerin.html
+================================================================================
+TITULO: EUCERIN proteccion
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\proteccion\isdin.html
+================================================================================
+TITULO: ISDIN proteccion
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\proteccion\laca.html
+================================================================================
+TITULO: LACA proteccion
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\proteccion\laroche.html
+================================================================================
+TITULO: LA ROCHE-POSAY proteccion
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\proteccion\natura.html
+================================================================================
+TITULO: NATURA proteccion
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+================================================================================
+ARCHIVO: marcas_viejo\proteccion\umbrella.html
+================================================================================
+TITULO: UMBRELLA
+SCRIPTS: ['../../script-wsp.js']
+----------------------------------------------------------------------
+
+==========================================================================================
+FIN DE LA RADIOGRAFIA TOTAL
