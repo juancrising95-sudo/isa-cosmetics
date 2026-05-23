@@ -142,37 +142,38 @@ body::before{
 /* 📱 VERSION CELULAR */
 /* ===================================================== */
 @media (max-width:1199px){
-
-    body{
-        padding:0;
-    }
+    body{ padding:0; }
 
     .decoracion-lateral{
-        width:100%;
-        left:0;
-        flex-direction:row;
-        justify-content:center;
-        padding:10px;
-        background:linear-gradient(90deg,#4a5d23,#adc15d);
+        width: 100%;
+        left: 0;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 8px 10px;
+        background: linear-gradient(90deg, rgba(74,93,35,0.95), rgba(173,193,93,0.95));
+        backdrop-filter: blur(5px);
     }
 
-    /* barra superior */
     .izquierda{ top:0; }
-
-    /* barra inferior */
     .derecha{ bottom:0; }
 
     .promo-box{
-        width:45%;
-        animation:none;
+        width: 44%; 
+        padding: 8px;
+        border-radius: 12px;
+        animation: none;
     }
+
+    .promo-box h3 { font-size: 12px; }
+    .promo-box p { font-size: 11px; margin-top: 3px; }
 }
 
 /* AJUSTE FINAL MOVIL (espacio para barras promo) */
 @media (max-width:1199px){
     body{
-        padding-top:70px;
-        padding-bottom:70px;
+        padding-top: 65px;
+        padding-bottom: 120px; /* 🔥 Esto evita que la barra inferior tape el menú IA */
     }
 }
 
@@ -233,101 +234,180 @@ body::before{
     to{ transform:translateY(-400px); }
 }
 
-/* ============================= */
-/* PAGINAS DE CATEGORIA */
-/* ============================= */
+/* ===================================================== */
+/* ✨ SISTEMA PREMIUM PARA PÁGINAS DE CATEGORÍA (VIVO) ✨ */
+/* ===================================================== */
 
-.pagina-categoria{
-    min-height:100vh;
-    padding:40px 20px;
+/* Forzar que el body de las categorías tenga el fondo líquido fluido cosmético */
+body.facial, body.solar, body.capilar, body.corporal, body.maquillaje, body.proteccion {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    /* Degradado vivo y fresco con movimiento continuo */
+    background: linear-gradient(135deg, #f7f5eb, #e1e7c4, #f3f6e6, #d2dcab);
+    background-size: 400% 400%;
+    animation: movimientoSerum 15s ease infinite;
 }
 
-/* Botón volver */
-.btn-volver{
-    position:fixed;
-    top:20px;
-    left:20px;
-    background:white;
-    padding:10px 18px;
-    border-radius:30px;
-    text-decoration:none;
-    color:#4a5d23;
-    font-weight:600;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
-    z-index:999;
+@keyframes movimientoSerum {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Encabezado */
-.header-categoria{
-    text-align:center;
-    margin-top:60px;
-    margin-bottom:40px;
+/* Botón Volver Flotante Premium */
+.btn-volver {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #4a5d23;
+    font-weight: 600;
+    font-size: 13px;
+    box-shadow: 0 4px 15px rgba(74, 93, 35, 0.15);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
 }
 
-.header-categoria h1{
-    font-size:32px;
-    color:#4a5d23;
-    margin-bottom:10px;
+.btn-volver:hover, .btn-volver:active {
+    background: #ffffff;
+    transform: translateX(3px);
+    box-shadow: 0 6px 20px rgba(74, 93, 35, 0.25);
 }
 
-.header-categoria p{
-    color:#6c7a3c;
+/* Encabezado con Respiración Visual */
+.header-categoria {
+    text-align: center;
+    margin-top: 100px; /* Evita colisiones con el botón volver flotante */
+    margin-bottom: 35px;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    z-index: 2;
 }
 
-/* Grid marcas escritorio */
-.grid-marcas{
-    max-width:900px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    padding:20px;
+.header-categoria h1 {
+    font-size: 30px;
+    color: #242e14;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
 }
 
-/* 📱 En celular = LISTA VERTICAL */
-@media (max-width:768px){
-    .grid-marcas{
-        grid-template-columns:1fr;
-        gap:18px;
+.header-categoria p {
+    color: #5b6b33;
+    font-size: 13px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Contenedor Base Grid (Enfoque prioritario Celulares) */
+.grid-marcas {
+    width: 100%;
+    max-width: 440px; 
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 18px;
+    padding: 0 24px 140px 24px; 
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* Tarjeta de Marca Premium con Efecto Glow de Luz Interno */
+.marca {
+    background: rgba(255, 255, 255, 0.75) !important; /* Cristal ultra pulido y claro */
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.9); 
+    height: 74px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #242e14;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* Doble sombra: Resplandor interno blanco + sombra suave externa */
+    box-shadow: 0 8px 25px rgba(74, 93, 35, 0.08), 
+                inset 0 0 12px rgba(255, 255, 255, 0.6); 
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Animación orgánica de entrada en cascada */
+    animation: brotarBoton 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Indicador táctil lateral sutil con flecha interactiva */
+.marca::after {
+    content: "→";
+    position: absolute;
+    right: 24px;
+    font-size: 18px;
+    color: #5b6b33;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+/* Estados de interacción: Expansión Lumínica */
+.marca:hover, .marca:active {
+    transform: translateY(-4px) scale(1.01);
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 15px 30px rgba(111, 134, 54, 0.25), 
+                0 0 15px rgba(255, 255, 255, 0.8);
+    border: 1px solid #ffffff;
+    color: #12180a;
+}
+
+.marca:hover::after, .marca:active::after {
+    opacity: 1;
+    transform: translateX(5px);
+    color: #12180a;
+}
+
+/* Animación para que los botones broten con elegancia */
+@keyframes brotarBoton {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-.marca{
-    background:white;
-    height:80px;
-    border-radius:16px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:700;
-    color:#4a5d23;
-    box-shadow:0 8px 20px rgba(0,0,0,0.12);
-    transition:.3s;
-    text-decoration:none;
-    font-size:18px;
-}
+/* Retraso secuencial en cascada para las marcas al cargar */
+.marca:nth-child(1) { animation-delay: 0.05s; }
+.marca:nth-child(2) { animation-delay: 0.12s; }
+.marca:nth-child(3) { animation-delay: 0.19s; }
+.marca:nth-child(4) { animation-delay: 0.26s; }
+.marca:nth-child(5) { animation-delay: 0.33s; }
+.marca:nth-child(6) { animation-delay: 0.40s; }
 
-.marca:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.18);
-}
-
-/* 📱 CATEGORIAS EN CELULAR → UNA SOLA COLUMNA */
-@media (max-width:768px){
-    .grid-marcas{
-        grid-template-columns:1fr;
-        max-width:420px;
-    }
-
-    .marca{
-        height:90px;
-        font-size:18px;
-    }
-}
-
-#ancla-categorias{
-    position:absolute;
-    top:60%;
+#ancla-categorias {
+    position: absolute;
+    top: 60%;
 }
 
 /* ============================= */
@@ -636,7 +716,9 @@ body.cerave::before{
     background-position:center;
     background-size:cover;
     background-attachment:fixed;
-    opacity:0.25; /* 🔥 clave: suave para ver botones */
+    opacity:0.45 !important; /* 🔥 Subido a 0.45 para darle más vida y visibilidad a las texturas de fondo */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 /* fondos por categoría */
@@ -652,16 +734,11 @@ body.cerave::before{
     background-image:url("assets/fondos-categorias/capilar.jpg");
 }
 
-
-
-/* FONDOS POR CATEGORIA */
-.fondo-solar{
-    background-image:url("assets/fondos-categorias/solar.jpg");
-}
-
-/* 🔥 APAGAR FONDO GLOBAL EN PAGINAS INTERNAS (CORRECTO) */
-body.pagina-categoria::before{
-    background:none !important;
+/* 🔥 APAGAR EL FONDO OSCURO/PREDETERMINADO DEL INDEX EN LAS CATEGORÍAS */
+body.facial::before, body.solar::before, body.capilar::before, 
+body.corporal::before, body.maquillaje::before, body.proteccion::before,
+body.pagina-categoria::before {
+    background: none !important;
 }
 
 
@@ -821,19 +898,19 @@ body.pagina-categoria::before{
 @media (max-width:1199px){
 
     .promo-destacada{
-        width:45%;
-        min-height:120px;
-        padding:8px;
+        width: 44%;
+        min-height: auto; /* 🔥 Quita el ancho excesivo */
+        padding: 8px;
     }
 
     #promo-banner-index{
-        max-width:90px;
+        max-width: 80px;
+        margin-bottom: 4px;
     }
 
     #promo-titulo-index{
-        font-size:11px;
+        font-size: 11px;
     }
-
 }
 
 .promo-destacada p{
