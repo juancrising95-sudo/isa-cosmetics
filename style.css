@@ -288,11 +288,33 @@ body::before{
     content:"";
     position:absolute;
     inset:0;
+
     background-image:
-        radial-gradient(circle, rgba(255,215,120,0.35) 1px, transparent 2px);
-    background-size: 120px 120px;
-    opacity:.60;
-    animation: particulas 18s linear infinite;
+
+        /* partículas suaves */
+        radial-gradient(circle, rgba(255,215,120,0.30) 1px, transparent 2px),
+
+        /* estrellas blancas */
+        radial-gradient(circle, rgba(255,255,255,0.95) 2px, transparent 4px),
+
+        /* estrellas verdes agua */
+        radial-gradient(circle, rgba(170,255,240,0.70) 1.5px, transparent 3px);
+
+    background-size:
+        140px 140px,
+        260px 260px,
+        320px 320px;
+
+    background-position:
+        0 0,
+        40px 60px,
+        120px 180px;
+
+    opacity:.75;
+
+    animation:
+        particulas 18s linear infinite,
+        brilloEstrellas 4s ease-in-out infinite alternate;
 }
 
 @keyframes brilloMove{
@@ -304,6 +326,25 @@ body::before{
 @keyframes particulas{
     from{ transform:translateY(0); }
     to{ transform:translateY(-400px); }
+}
+
+@keyframes brilloEstrellas{
+
+    0%{
+        opacity:.45;
+        filter:brightness(1);
+    }
+
+    50%{
+        opacity:.90;
+        filter:brightness(1.4);
+    }
+
+    100%{
+        opacity:.60;
+        filter:brightness(1.1);
+    }
+
 }
 
 /* ===================================================== */
