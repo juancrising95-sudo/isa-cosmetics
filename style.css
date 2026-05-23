@@ -48,18 +48,19 @@ body::before{
 /* Zonas generales */
 .zona{
     position:absolute;
-    left:0;
-    width:100%;
+    left:6%;
+    width:88%;
     height:6.5%;
+    border-radius:30px;
 }
 
 /* Botones categorías */
-.z1{ top:62.2%; }
-.z2{ top:68.1%; }
-.z3{ top:74.7%; }
-.z4{ top:80.3%; }
-.z5{ top:86.5%; }
-.z6{ top:92.2%; }
+.z1{ top:55.4%; }
+.z2{ top:62.3%; }
+.z3{ top:69.2%; }
+.z4{ top:76.0%; }
+.z5{ top:81.9%; }
+.z6{ top:89.8%; }
 
 /* Botones contacto */
 .contacto{
