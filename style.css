@@ -553,55 +553,104 @@ body.facial, body.solar, body.capilar, body.corporal, body.maquillaje, body.prot
     padding:20px;
 }
 
-/* Tarjeta producto */
+/* ================================= */
+/* PRODUCTO PREMIUM ISA COSMETICS */
+/* ================================= */
+
 .producto{
-    background:#cfeeea;
-    border-radius:20px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border-radius:28px;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    transition:.3s;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.12),
+        0 5px 15px rgba(255,255,255,.4) inset;
+
+    transition:.35s ease;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    position:relative;
 }
 
 .producto:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 40px rgba(0,0,0,0.2);
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.18),
+        0 0 25px rgba(255,255,255,.6);
 }
 
 .producto img{
     width:100%;
-    height:220px;
-    object-fit:cover;
-}
+    height:340px;
 
+    object-fit:contain;
+
+    background:white;
+
+    padding:20px;
+    box-sizing:border-box;
+}
 .info-producto{
-    padding:18px;
+    padding:24px;
     text-align:center;
-    background:#dff5f2;
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #f7fbfa
+    );
 }
 
 .info-producto h3{
-    margin:0;
-    color:#2f3b1f;
-    font-size:22px;
-    font-weight:700;
+    margin:0 0 14px;
+
+    color:#24301b;
+
+    font-size:24px;
+    font-weight:800;
+
+    line-height:1.3;
 }
 
 .info-producto p{
-    font-size:14px;
-    color:#555;
-    line-height:1.5;
+    font-size:15px;
+    color:#4b4b4b;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
 }
 
 /* Botón WhatsApp */
 .btn-wsp{
     display:block;
+
     text-align:center;
+
     background:#25D366;
     color:white;
-    padding:10px;
-    border-radius:10px;
+
+    padding:16px;
+
+    border-radius:16px;
+
     text-decoration:none;
-    font-weight:600;
+
+    font-weight:700;
+
+    font-size:16px;
+
+    transition:.3s ease;
+}
+
+.btn-wsp:hover{
+    transform:scale(1.03);
 }
 
 /* 📱 PRODUCTOS EN CELULAR → UNA SOLA COLUMNA */
@@ -609,12 +658,12 @@ body.facial, body.solar, body.capilar, body.corporal, body.maquillaje, body.prot
 
     .grid-productos{
         grid-template-columns:1fr;
-        gap:22px;
-        padding:15px;
+        gap:30px;
+        padding:18px;
     }
 
     .producto img{
-        height:260px; /* se ven más grandes en móvil */
+        height:360px;
     }
 
 }
@@ -638,11 +687,15 @@ body.facial, body.solar, body.capilar, body.corporal, body.maquillaje, body.prot
 
 .precio{
     display:block;
-    text-align:center;
-    font-weight:800;
-    font-size:22px;
-    color:#2f6b2f;
-    margin:12px 0 16px;
+
+    font-size:32px;
+    font-weight:900;
+
+    color:#1f7a46;
+
+    margin:20px 0;
+
+    letter-spacing:-1px;
 }
 
 /* ============================= */

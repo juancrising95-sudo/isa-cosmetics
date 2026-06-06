@@ -58,18 +58,47 @@ async function cargarProductos() {
     const card = document.createElement("div")
     card.className = "producto"
     card.innerHTML = `
+  <div class="producto-hero">
+
       <img src="${producto.imagen_url}" alt="${producto.nombre}">
-      <div class="info-producto">
-        <h3>${producto.nombre}</h3>
-        <p>${producto.descripcion ?? ""}</p>
-        <span class="precio">Bs ${producto.precio ?? ""}</span>
-        <a class="btn-wsp"
-           href="https://wa.me/59168807598?text=Hola,%20quiero%20consultar%20sobre:%20${encodeURIComponent(producto.nombre)}"
-           target="_blank">
-          Consultar por WhatsApp
-        </a>
+
+      <div class="overlay-producto"></div>
+
+      <div class="contenido-producto">
+
+          <span class="badge-producto">
+              ISA COSMETICS
+          </span>
+
+          <h3>
+              ${producto.nombre}
+          </h3>
+
+          ${
+            producto.descripcion
+              ? `<p>${producto.descripcion}</p>`
+              : ""
+          }
+
+          ${
+            producto.precio
+              ? `<span class="precio">Bs ${producto.precio}</span>`
+              : ""
+          }
+
+          <a
+             class="btn-wsp"
+             href="https://wa.me/59168807598?text=Hola,%20quiero%20consultar%20sobre:%20${encodeURIComponent(producto.nombre)}"
+             target="_blank">
+
+             Consultar por WhatsApp
+
+          </a>
+
       </div>
-    `
+
+  </div>
+`
     contenedor.appendChild(card)
   })
 }
