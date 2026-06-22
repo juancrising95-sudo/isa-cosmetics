@@ -30,9 +30,9 @@
 <!-- ⭐ PANEL LATERAL DERECHO ⭐ -->
 <div class="decoracion-lateral derecha">
   <div class="promo-box">
-    <h3>❄️ EN JUNIO:</h3>
-    <p>Celebramos el bienestar, la calidez del hogar y la fuerza de nuestras raíces.</p>
-  </div>
+    <h3 id="titulo-mes"></h3>
+    <p id="mensaje-mes"></p>
+</div>
   <a href="promociones.html" class="promo-box promo-destacada" id="promo-dinamica">
     <h3 id="promo-titulo-index">PROMOCIÓN DEL MES</h3>
     <p>Toca para ver</p>
@@ -109,25 +109,82 @@ cargarPromoIndex()
 </script>
 
 <script>
-const fecha = new Date();
+document.addEventListener("DOMContentLoaded", () => {
 
-const meses = [
-  "ENERO",
-  "FEBRERO",
-  "MARZO",
-  "ABRIL",
-  "MAYO",
-  "JUNIO",
-  "JULIO",
-  "AGOSTO",
-  "SEPTIEMBRE",
-  "OCTUBRE",
-  "NOVIEMBRE",
-  "DICIEMBRE"
+  const fecha = new Date();
+
+  const meses = [
+    "ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO",
+    "JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"
+  ];
+
+  const fechaEl = document.getElementById("fecha-catalogo");
+
+  if (fechaEl) {
+    fechaEl.textContent =
+      `${fecha.getDate()} DE ${meses[fecha.getMonth()]} DE ${fecha.getFullYear()}`;
+  }
+
+});
+</script>
+
+<script>
+const datosMeses = [
+{
+titulo: "✨ EN ENERO",
+mensaje: "Comenzamos un nuevo año cuidando tu belleza y bienestar."
+},
+{
+titulo: "❤️ EN FEBRERO",
+mensaje: "Celebramos el amor propio y el cuidado personal."
+},
+{
+titulo: "🌷 EN MARZO",
+mensaje: "La renovación y la frescura acompañan esta temporada."
+},
+{
+titulo: "🌿 EN ABRIL",
+mensaje: "Tiempo de revitalizar tu piel y tus hábitos de bienestar."
+},
+{
+titulo: "🌹 EN MAYO",
+mensaje: "Un mes para consentirte y resaltar tu belleza natural."
+},
+{
+titulo: "❄️ EN JUNIO",
+mensaje: "Celebramos el bienestar, la calidez del hogar y la fuerza de nuestras raíces."
+},
+{
+titulo: "☕ EN JULIO",
+mensaje: "Disfrutamos del invierno cuidando la piel y compartiendo momentos especiales."
+},
+{
+titulo: "🌼 EN AGOSTO",
+mensaje: "La energía y la renovación nos inspiran a seguir brillando."
+},
+{
+titulo: "🌸 EN SEPTIEMBRE",
+mensaje: "Recibimos la primavera con color, frescura y belleza."
+},
+{
+titulo: "🍃 EN OCTUBRE",
+mensaje: "Un mes para florecer y dedicar tiempo al cuidado personal."
+},
+{
+titulo: "☀️ EN NOVIEMBRE",
+mensaje: "Nos acercamos al verano con más luminosidad y vitalidad."
+},
+{
+titulo: "🎄 EN DICIEMBRE",
+mensaje: "Celebramos la alegría, los encuentros y los momentos especiales del año."
+}
 ];
 
-document.getElementById("fecha-catalogo").textContent =
-`${fecha.getDate()} DE ${meses[fecha.getMonth()]} DE ${fecha.getFullYear()}`;
+const hoy = new Date();
+const infoMes = datosMeses[hoy.getMonth()];
+
+document.getElementById("titulo-mes").textContent = infoMes.titulo;
+document.getElementById("mensaje-mes").textContent = infoMes.mensaje;
 </script>
 
 </body>
