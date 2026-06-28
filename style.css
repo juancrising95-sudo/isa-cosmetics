@@ -177,14 +177,16 @@ body::before{
 
 .promo-box h3{
     margin:0;
-    color:#e8f0c8;
+    color:#ffffff !important;
     font-size:14px;
+    forced-color-adjust: none;
 }
 
 .promo-box p{
     margin:5px 0 0;
     font-size:12px;
-    color:#c8d89a;
+    color:#d4edaa !important;
+    forced-color-adjust: none;
 }
 
 /* ANIMACIÓN */
@@ -262,21 +264,30 @@ body::before{
 }
 
 #panel-instruccion h3 {
-    background: linear-gradient(
-        90deg,
-        #c8d88a 0%,
-        #ffffff 35%,
-        #adc15d 55%,
-        #ffffff 75%,
-        #c8d88a 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmerTexto 3.5s linear infinite;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
     font-size: 12px;
     line-height: 1.4;
+    text-shadow:
+        0 0 12px rgba(200, 255, 140, 0.80),
+        0 0 28px rgba(173, 193, 93, 0.45),
+        0 1px 3px rgba(0, 0, 0, 0.50);
+    animation: brilloTexto 2.8s ease-in-out infinite;
+    forced-color-adjust: none;
+}
+
+@keyframes brilloTexto {
+    0%, 100% {
+        text-shadow:
+            0 0 8px rgba(200, 255, 140, 0.50),
+            0 1px 3px rgba(0, 0, 0, 0.40);
+    }
+    50% {
+        text-shadow:
+            0 0 18px rgba(220, 255, 160, 0.95),
+            0 0 35px rgba(173, 193, 93, 0.60),
+            0 1px 3px rgba(0, 0, 0, 0.40);
+    }
 }
 
 /* Flecha rebotando (el ::before ya es la luz scan, usamos ::after) */
@@ -1245,4 +1256,33 @@ body.pagina-categoria::before {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+
+/* ===================================================== */
+/* 🛡️ PROTECCIÓN ANTI DARK MODE EXTENSIONES */
+/* ===================================================== */
+
+#panel-fecha,
+#panel-instruccion,
+#panel-mes {
+    color-scheme: light dark;
+    forced-color-adjust: none;
+}
+
+#panel-fecha h3,
+#panel-fecha p,
+#panel-instruccion h3,
+#panel-instruccion::after,
+#panel-mes h3,
+#panel-mes p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    forced-color-adjust: none;
+}
+
+#panel-mes p,
+.promo-box p {
+    color: #d4edaa !important;
+    -webkit-text-fill-color: #d4edaa !important;
 }
