@@ -380,6 +380,8 @@ body::before{
 /* 📱 VERSION CELULAR */
 /* ===================================================== */
 @media (max-width:1199px){
+    body{ padding:0; }
+
     .decoracion-lateral{
         width: 100%;
         left: 0;
@@ -390,6 +392,9 @@ body::before{
         background: linear-gradient(90deg, rgba(74,93,35,0.95), rgba(173,193,93,0.95));
         backdrop-filter: blur(5px);
     }
+
+    .izquierda{ top:0; }
+    .derecha{ bottom:0; }
 
     .promo-box{
         width: 44%; 
@@ -406,7 +411,7 @@ body::before{
 @media (max-width:1199px){
     body{
         padding-top: 65px;
-        padding-bottom: 120px;
+        padding-bottom: 120px; /* 🔥 Esto evita que la barra inferior tape el menú IA */
     }
 }
 
@@ -1281,6 +1286,3 @@ body.pagina-categoria::before {
     color: #d4edaa !important;
     -webkit-text-fill-color: #d4edaa !important;
 }
-
-
-
