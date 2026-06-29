@@ -178,13 +178,13 @@ body::before{
 .promo-box h3{
     margin:0;
     color:#ffffff !important;
-    font-size:14px;
+    font-size:11px;
     forced-color-adjust: none;
 }
 
 .promo-box p{
     margin:5px 0 0;
-    font-size:12px;
+    font-size:10px;
     color:#d4edaa !important;
     forced-color-adjust: none;
 }
@@ -388,7 +388,7 @@ body::before{
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        padding: 8px 10px;
+        padding: 4px 8px;
         background: linear-gradient(90deg, rgba(74,93,35,0.95), rgba(173,193,93,0.95));
         backdrop-filter: blur(5px);
     }
@@ -397,8 +397,8 @@ body::before{
     .derecha{ bottom:0; }
 
     .promo-box{
-        width: 44%; 
-        padding: 8px;
+        width: 46%; 
+        padding: 6px;
         border-radius: 12px;
         animation: none;
     }
@@ -410,8 +410,8 @@ body::before{
 /* AJUSTE FINAL MOVIL (espacio para barras promo) */
 @media (max-width:1199px){
     body{
-        padding-top: 65px;
-        padding-bottom: 120px; /* 🔥 Esto evita que la barra inferior tape el menú IA */
+        padding-top:50px;
+        padding-bottom: 105px; 🔥 Esto evita que la barra inferior tape el menú IA */
     }
 }
 
@@ -1085,7 +1085,7 @@ body.pagina-categoria::before {
     color: white;
     padding: 15px;
     z-index: 9999;
-    animation: aparecer 0.5s ease;
+    animation: aparecerBanner 0.5s ease;
 }
 
 .banner-contenido{
@@ -1111,7 +1111,7 @@ body.pagina-categoria::before {
     font-size: 18px;
 }
 
-@keyframes aparecer{
+@keyframes aparecerBanner
     from{ transform: translateY(100%); }
     to{ transform: translateY(0); }
 }
@@ -1157,8 +1157,14 @@ body.pagina-categoria::before {
 }
 
 @keyframes aparecer{
-  from{transform:scale(.7);opacity:0}
-  to{transform:scale(1);opacity:1}
+  from{
+      transform:scale(.7);
+      opacity:0
+  }
+  to{
+      transform:scale(1);
+      opacity:1
+  }
 }
 
 
@@ -1188,6 +1194,11 @@ body.pagina-categoria::before {
     transition:.3s ease;
 
     overflow:hidden;
+}
+
+.promo-destacada{
+    width:100%;
+    box-sizing:border-box;
 }
 
 /* Imagen promo */
@@ -1229,11 +1240,7 @@ body.pagina-categoria::before {
 
 @media (max-width:1199px){
 
-    .promo-destacada{
-        width: 44%;
-        min-height: auto; /* 🔥 Quita el ancho excesivo */
-        padding: 8px;
-    }
+    
 
     #promo-banner-index{
         max-width: 80px;
